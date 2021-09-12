@@ -8,7 +8,7 @@ import { Contact } from "../src/components/contact/Contact";
 
 export default function Home() {
   return (
-    <div>
+    <div style={{ backgroundColor: "#041733" }}>
       <HeaderNavBar />
       <AboutSection />
       <SkillContainer />

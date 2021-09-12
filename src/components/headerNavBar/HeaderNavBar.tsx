@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Box, AppBar, Toolbar, Typography } from "@material-ui/core";
+import { Box, AppBar, Toolbar, Typography, Button } from "@material-ui/core";
 import { useStyles } from "./useStyles";
 import DehazeIcon from "@material-ui/icons/Dehaze";
 import CloseIcon from "@material-ui/icons/Close";
@@ -25,30 +25,44 @@ export const HeaderNavBar = () => {
     return (
       <>
         <Box className={classes.NavMainContainer}>
-          <Typography variant="h5">Protfolio</Typography>
+          <Typography
+            variant="h4"
+            color="secondary"
+            align="center"
+            style={{
+              fontWeight: 900,
+              letterSpacing: "2px",
+            }}
+          >
+            Protfolio
+          </Typography>
         </Box>
         <Box className={classes.headerNavigationContainer}>
           <Typography variant="body2">
-            <Link style={{ color: "#ffffff" }} href="#about">
+            <Link href="#about" className={classes.navLinkText}>
               About
             </Link>
           </Typography>
           <Typography variant="body2">
-            <Link style={{ color: "#ffffff" }} href="#skill">
-              {" "}
+            <Link href="#skill" className={classes.navLinkText}>
               Skill
             </Link>
           </Typography>
           <Typography variant="body2">
-            <Link style={{ color: "#ffffff" }} href="#project">
+            <Link href="#project" className={classes.navLinkText}>
               Projects
             </Link>
           </Typography>
           <Typography variant="body2">
-            <Link style={{ color: "#ffffff" }} href="#contact">
+            <Link href="#contact" className={classes.navLinkText}>
               Contact
             </Link>
           </Typography>
+        </Box>
+        <Box className={classes.NavMainContainerBox}>
+          <Button variant="outlined" color="secondary">
+            Resume
+          </Button>
         </Box>
       </>
     );
@@ -58,7 +72,9 @@ export const HeaderNavBar = () => {
     return (
       <>
         <Box className={classes.headingContainer}>
-          <Typography variant="h5">Protfolio</Typography>
+          <Typography color="secondary" variant="h5">
+            Protfolio
+          </Typography>
         </Box>
         <Box className={classes.navIcons}>
           {!showDropDown ? (
@@ -77,14 +93,15 @@ export const HeaderNavBar = () => {
 
   const navLinkDropDown = () => {
     return (
-      <Box className={classes.dropDownNav}>
+      <Box className={`${classes.dropDownNav} ${classes.dropDownNavAnimation}`}>
         <List component="nav" aria-label="main mailbox folders">
           <ListItem button>
             <ListItemText
+              className={classes.dropDownNavAnimationButton}
               primary={
                 <Typography align="center" variant="body2">
                   <Link
-                    style={{ color: "#ffffff" }}
+                    className={classes.navLinkText}
                     href="#about"
                     onClick={() => {
                       setShowDropDown(false);
@@ -98,10 +115,11 @@ export const HeaderNavBar = () => {
           </ListItem>
           <ListItem button>
             <ListItemText
+              className={classes.dropDownNavAnimationButton}
               primary={
                 <Typography align="center" variant="body2">
                   <Link
-                    style={{ color: "#ffffff" }}
+                    className={classes.navLinkText}
                     href="#skill"
                     onClick={() => {
                       setShowDropDown(false);
@@ -115,10 +133,11 @@ export const HeaderNavBar = () => {
           </ListItem>
           <ListItem button>
             <ListItemText
+              className={classes.dropDownNavAnimationButton}
               primary={
                 <Typography align="center" variant="body2">
                   <Link
-                    style={{ color: "#ffffff" }}
+                    className={classes.navLinkText}
                     href="#project"
                     onClick={() => {
                       setShowDropDown(false);
@@ -132,10 +151,11 @@ export const HeaderNavBar = () => {
           </ListItem>
           <ListItem button>
             <ListItemText
+              className={classes.dropDownNavAnimationButton}
               primary={
                 <Typography align="center" variant="body2">
                   <Link
-                    style={{ color: "#ffffff" }}
+                    className={classes.navLinkText}
                     href="#contact"
                     onClick={() => {
                       setShowDropDown(false);
@@ -147,6 +167,18 @@ export const HeaderNavBar = () => {
               }
             />
           </ListItem>
+          <ListItem>
+            <ListItemText
+              className={classes.dropDownNavAnimationButton}
+              primary={
+                <Typography align="center">
+                  <Button variant="outlined" color="secondary">
+                    Resume
+                  </Button>
+                </Typography>
+              }
+            />
+          </ListItem>
         </List>
       </Box>
     );
@@ -154,8 +186,11 @@ export const HeaderNavBar = () => {
 
   return (
     <>
-      <Box className={`${showDropDown ? classes.main : ""}`}>
-        <AppBar style={{ backgroundColor: "black" }}>
+      <Box
+        style={{ border: "1px solid green" }}
+        className={`${showDropDown ? classes.main : ""}`}
+      >
+        <AppBar>
           <Toolbar className={`${classes.toolbarContainer}`}>
             {tabletAndDesktopViewNavbar()}
             {mobileViewNavbar()}

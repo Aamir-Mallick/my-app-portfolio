@@ -3,7 +3,8 @@ import img from "/main.jpg";
 
 export const useStyles = makeStyles((theme) => ({
   aboutMainContainer: {
-    marginTop: "70px",
+    marginTop: "50px",
+    backgroundColor: "#041733",
     // position: "relative",
     // top: "60px",
     // minHeight: "450px",
@@ -11,6 +12,10 @@ export const useStyles = makeStyles((theme) => ({
     // backgroundSize: "cover",
     // color: "#ffffff",
     // // overflow: "auto",
+  },
+  textContainer: {
+    paddingTop: "5rem",
+    paddingBottom: "5rem",
   },
   textContent: {
     display: "flex",
@@ -33,11 +38,11 @@ export const useStyles = makeStyles((theme) => ({
     paddingLeft: "2rem",
   },
   imageContainer: {
-    width: "300px",
-    height: "300px",
+    // width: "300px",
+    height: "200px",
     backgroundImage: `url("/aamir.jpg")`,
-    borderRadius: "100%",
+    // borderRadius: "100%",
     backgroundSize: "cover",
-    border: "5px solid black",
+    border: "5px solid #64ffda",
   },
 }));
