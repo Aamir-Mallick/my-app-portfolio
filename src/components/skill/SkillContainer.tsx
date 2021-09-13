@@ -90,9 +90,9 @@ export const SkillContainer = () => {
               Deloitte(USI)
             </Typography>
           </Box>
-          <Box style={{ marginLeft: "3rem" }}>
+          <Box className={classes.listMainContainer}>
             <List
-              style={{ paddingTop: "0px", paddingBottom: "0px" }}
+              className={classes.listContainer}
               component="nav"
               aria-label="main mailbox folders"
             >

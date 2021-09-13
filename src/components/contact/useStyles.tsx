@@ -1,14 +1,30 @@
 import { makeStyles } from "@material-ui/core/styles";
 
 export const useStyles = makeStyles((theme) => ({
-  root: {
-    backgroundColor: "#ffffff",
-    marginTop: "2rem",
-    padding: "2rem 0rem 2rem 0rem",
+  contentContainer: {
+    // border: "1px solid red",
+    marginTop: "5rem",
+    paddingBottom: "2rem",
   },
-  container: {
-    width: "400px",
-    margin: "2rem auto",
-    display: "flex",
+  linkContainerMobile: {
+    display: "none",
+    [theme.breakpoints.down("sm")]: {
+      width: "260px",
+      margin: "1rem auto",
+      marginTop: "2rem",
+      display: "flex",
+      justifyContent: "space-between",
+    },
+  },
+  emailContainerMobile: {
+    display: "none",
+    [theme.breakpoints.down("sm")]: {
+      display: "block",
+      width: "200px",
+      margin: "2rem auto",
+    },
+  },
+  iconeHeightMobile: {
+    // width: "50px",
   },
 }));

@@ -33,7 +33,7 @@ export const useStyles = makeStyles((theme) => ({
       flexDirection: "column",
       alignItems: "center",
       justifyContent: "space-between",
-      height: "450px",
+      height: "400px",
       // border: "1px solid red",
       // // margin: "10px auto",
       // padding: "0px auto",
@@ -49,5 +49,17 @@ export const useStyles = makeStyles((theme) => ({
 
       textAlign: "center",
     },
+  },
+  listMainContainer: {
+    marginLeft: "3rem",
+    [theme.breakpoints.down("xs")]: {
+      marginTop: "5px",
+      marginLeft: "0rem",
+      width: "300px",
+    },
+  },
+  listContainer: {
+    paddingTop: "0px",
+    paddingBottom: "0px",
   },
 }));

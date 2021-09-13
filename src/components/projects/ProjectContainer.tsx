@@ -1,11 +1,19 @@
 import React from "react";
-import { Box, Typography, Container, Grid, Button } from "@material-ui/core";
+import {
+  Box,
+  Typography,
+  Container,
+  Link,
+  Grid,
+  Button,
+} from "@material-ui/core";
 import { useStyles } from "./useStyles";
 import AddToHomeScreenIcon from "@material-ui/icons/AddToHomeScreen";
 import GitHubIcon from "@material-ui/icons/GitHub";
 
 export const ProjectContainer = () => {
   const classes = useStyles();
+
   return (
     <Box id="project" className={classes.root}>
       <Box
@@ -34,50 +42,85 @@ export const ProjectContainer = () => {
             position: "relative",
           }}
         >
-          <Box style={{ width: "60%", borderRadius: "5px" }}>
+          <Box className={classes.imageContainer}>
             <img
               src={"../../../fodify.png"}
+              className={classes.imageBox}
               width="100%"
               height="100%"
-              style={{ borderRadius: "5px" }}
             />
           </Box>
-          <Box
-            style={{
-              width: "40%",
-              // position: "relative",
-              // border: "1px solid white",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-            }}
-          >
-            <Typography variant="h4" align="right">
+          <Box className={classes.projectContentContainer}>
+            <Typography
+              className={classes.projectName}
+              variant="h4"
+              align="right"
+            >
               Fodify
             </Typography>
-            <Box
-              style={{
-                backgroundColor: "#112240",
-                position: "absolute",
-                padding: "2rem 3rem",
-                zIndex: 1,
-                right: "2px",
-                top: "50%",
-                transform: "translateY(-50%)",
-                width: "440px",
-                borderRadius: "5px",
-              }}
-            >
+            <Box className={classes.projectContentBox}>
               <Typography
-                variant="body2"
-                style={{ fontSize: "20px", color: "#ccd6f6" }}
+                className={classes.projectNameMobile}
+                variant="h4"
+                align="right"
               >
+                Zomato Clone
+              </Typography>
+              <Typography variant="body2" className={classes.workTextContent}>
                 It was an online food delivery application, I have implemented
                 all feature like "Add to cart", "Search for cusins", "Hotel
                 details"
               </Typography>
+              <Box className={classes.projectLinksMobile}>
+                <Box
+                  style={{ display: "flex", justifyContent: "space-evenly" }}
+                >
+                  <Typography variant="body2">HTML5</Typography>
+                  <Typography variant="body2">Bootstrap</Typography>
+                  <Typography variant="body2">CSS3</Typography>
+                  <Typography variant="body2">SCSS</Typography>
+                </Box>
+                <Box
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    marginTop: "1rem",
+                  }}
+                >
+                  <Box
+                    style={{
+                      marginRight: "1.5rem",
+                      color: "#ccd6f6",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <Link href="https://naughty-wilson-7983d0.netlify.app/">
+                      <AddToHomeScreenIcon
+                        style={{
+                          color: "#ccd6f6",
+                        }}
+                      />
+                    </Link>
+                  </Box>
+                  <Box
+                    style={{
+                      marginRight: "1.5rem",
+                      color: "#ccd6f6",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <Link href="https://github.com/Aamir-Mallick/fodify-Application">
+                      <GitHubIcon
+                        style={{
+                          color: "#ccd6f6",
+                        }}
+                      />
+                    </Link>
+                  </Box>
+                </Box>
+              </Box>
             </Box>
-            <Box>
+            <Box className={classes.projectLinks}>
               <Box style={{ display: "flex", justifyContent: "space-evenly" }}>
                 <Typography variant="body2">React.js</Typography>
                 <Typography variant="body2">Firebase</Typography>
@@ -98,7 +141,13 @@ export const ProjectContainer = () => {
                     cursor: "pointer",
                   }}
                 >
-                  <AddToHomeScreenIcon />
+                  <Link href="https://naughty-wilson-7983d0.netlify.app/">
+                    <AddToHomeScreenIcon
+                      style={{
+                        color: "#ccd6f6",
+                      }}
+                    />
+                  </Link>
                 </Box>
                 <Box
                   style={{
@@ -107,7 +156,13 @@ export const ProjectContainer = () => {
                     cursor: "pointer",
                   }}
                 >
-                  <GitHubIcon />
+                  <Link href="https://github.com/Aamir-Mallick/fodify-Application">
+                    <GitHubIcon
+                      style={{
+                        color: "#ccd6f6",
+                      }}
+                    />
+                  </Link>
                 </Box>
               </Box>
             </Box>
@@ -119,83 +174,119 @@ export const ProjectContainer = () => {
             position: "relative",
           }}
         >
-          <Box style={{ width: "60%", borderRadius: "5px" }}>
+          <Box className={classes.projectContentContainerReverse}>
+            <Typography
+              className={classes.projectName}
+              variant="h4"
+              align="left"
+            >
+              Starweaver
+            </Typography>
+            <Box className={classes.projectContentBoxReverse}>
+              <Typography
+                className={classes.projectNameMobile}
+                variant="h4"
+                align="right"
+              >
+                Starweaver
+              </Typography>
+              <Typography variant="body2" className={classes.workTextContent}>
+                It was learnig web application, where used can learn by worl
+                class instructor, it was production application, I have worked
+                on different UI section
+              </Typography>
+              <Box className={classes.projectLinksMobile}>
+                <Box
+                  style={{ display: "flex", justifyContent: "space-evenly" }}
+                >
+                  <Typography variant="body2">HTML5</Typography>
+                  <Typography variant="body2">Bootstrap</Typography>
+                  <Typography variant="body2">CSS3</Typography>
+                  <Typography variant="body2">SCSS</Typography>
+                </Box>
+                <Box
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    marginTop: "1rem",
+                  }}
+                >
+                  <Box
+                    style={{
+                      marginRight: "1.5rem",
+                      color: "#ccd6f6",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <Link href="https://go.starweaver.com/on-air">
+                      <AddToHomeScreenIcon
+                        style={{
+                          color: "#ccd6f6",
+                        }}
+                      />
+                    </Link>
+                  </Box>
+                  <Box
+                    style={{
+                      marginRight: "1.5rem",
+                      color: "#ccd6f6",
+                      cursor: "pointer",
+                    }}
+                  >
+                    {/* <GitHubIcon /> */}
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+            <Box className={classes.projectLinks}>
+              <Box style={{ display: "flex", justifyContent: "space-evenly" }}>
+                <Typography variant="body2">React.js</Typography>
+                <Typography variant="body2">Redux</Typography>
+                <Typography variant="body2">Node.js</Typography>
+                <Typography variant="body2">Firebase</Typography>
+                <Typography variant="body2">Material UI</Typography>
+              </Box>
+              <Box
+                style={{
+                  display: "flex",
+                  justifyContent: "start",
+                  marginTop: "1rem",
+                }}
+              >
+                <Box
+                  style={{
+                    marginRight: "1.5rem",
+                    color: "#ccd6f6",
+                    cursor: "pointer",
+                  }}
+                >
+                  <Link href="https://go.starweaver.com/on-air">
+                    <AddToHomeScreenIcon
+                      style={{
+                        color: "#ccd6f6",
+                      }}
+                    />
+                  </Link>
+                </Box>
+                <Box
+                  style={{
+                    marginRight: "1.5rem",
+                    color: "#ccd6f6",
+                    cursor: "pointer",
+                  }}
+                >
+                  {/* <GitHubIcon /> */}
+                </Box>
+              </Box>
+            </Box>
+          </Box>
+          <Box className={classes.imageContainer}>
             <img
               src={"../../../starweaver.png"}
               width="100%"
               height="100%"
-              style={{ borderRadius: "5px" }}
+              className={classes.imageBox}
             />
-          </Box>
-          <Box
-            style={{
-              width: "40%",
-              // position: "relative",
-              // border: "1px solid white",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-            }}
-          >
-            <Typography variant="h4" align="right">
-              Fodify
-            </Typography>
-            <Box
-              style={{
-                backgroundColor: "#112240",
-                position: "absolute",
-                padding: "2rem 3rem",
-                zIndex: 1,
-                right: "2px",
-                top: "50%",
-                transform: "translateY(-50%)",
-                width: "440px",
-                borderRadius: "5px",
-              }}
-            >
-              <Typography
-                variant="body2"
-                style={{ fontSize: "20px", color: "#ccd6f6" }}
-              >
-                It was an online food delivery application, I have implemented
-                all feature like "Add to cart", "Search for cusins", "Hotel
-                details"
-              </Typography>
-            </Box>
-            <Box>
-              <Box style={{ display: "flex", justifyContent: "space-evenly" }}>
-                <Typography variant="body2">React.js</Typography>
-                <Typography variant="body2">Firebase</Typography>
-                <Typography variant="body2">CSS</Typography>
-                <Typography variant="body2">SCSS</Typography>
-              </Box>
-              <Box
-                style={{
-                  display: "flex",
-                  justifyContent: "end",
-                  marginTop: "1rem",
-                }}
-              >
-                <Box
-                  style={{
-                    marginRight: "1.5rem",
-                    color: "#ccd6f6",
-                    cursor: "pointer",
-                  }}
-                >
-                  <AddToHomeScreenIcon />
-                </Box>
-                <Box
-                  style={{
-                    marginRight: "1.5rem",
-                    color: "#ccd6f6",
-                    cursor: "pointer",
-                  }}
-                >
-                  <GitHubIcon />
-                </Box>
-              </Box>
-            </Box>
           </Box>
         </Box>
         <Box
@@ -204,54 +295,88 @@ export const ProjectContainer = () => {
             position: "relative",
           }}
         >
-          <Box style={{ width: "60%", borderRadius: "5px" }}>
+          <Box className={classes.imageContainer}>
             <img
               src={"../../../zomato.png"}
               width="100%"
               height="100%"
-              style={{ borderRadius: "5px" }}
+              className={classes.imageBox}
             />
           </Box>
-          <Box
-            style={{
-              width: "40%",
-              // position: "relative",
-              // border: "1px solid white",
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "space-between",
-            }}
-          >
-            <Typography variant="h4" align="right">
-              Fodify
-            </Typography>
-            <Box
-              style={{
-                backgroundColor: "#112240",
-                position: "absolute",
-                padding: "2rem 3rem",
-                zIndex: 1,
-                right: "2px",
-                top: "50%",
-                transform: "translateY(-50%)",
-                width: "440px",
-                borderRadius: "5px",
-              }}
+          <Box className={classes.projectContentContainer}>
+            <Typography
+              className={classes.projectName}
+              variant="h4"
+              align="right"
             >
+              Zomato Clone
+            </Typography>
+            <Box className={classes.projectContentBox}>
               <Typography
-                variant="body2"
-                style={{ fontSize: "20px", color: "#ccd6f6" }}
+                className={classes.projectNameMobile}
+                variant="h4"
+                align="right"
               >
-                It was an online food delivery application, I have implemented
-                all feature like "Add to cart", "Search for cusins", "Hotel
-                details"
+                Zomato Clone
               </Typography>
+              <Typography variant="body2" className={classes.workTextContent}>
+                It was clone of famous food delivery application, i cloned it
+                home page as same as it was in real,
+              </Typography>
+              <Box className={classes.projectLinksMobile}>
+                <Box
+                  style={{ display: "flex", justifyContent: "space-evenly" }}
+                >
+                  <Typography variant="body2">HTML5</Typography>
+                  <Typography variant="body2">Bootstrap</Typography>
+                  <Typography variant="body2">CSS3</Typography>
+                  <Typography variant="body2">SCSS</Typography>
+                </Box>
+                <Box
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    marginTop: "1rem",
+                  }}
+                >
+                  <Box
+                    style={{
+                      marginRight: "1.5rem",
+                      color: "#ccd6f6",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <Link href="https://aamir-mallick.github.io/zomato-replica/">
+                      <AddToHomeScreenIcon
+                        style={{
+                          color: "#ccd6f6",
+                        }}
+                      />
+                    </Link>
+                  </Box>
+                  <Box
+                    style={{
+                      marginRight: "1.5rem",
+                      color: "#ccd6f6",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <Link href="https://github.com/Aamir-Mallick/zomato-replica">
+                      <GitHubIcon
+                        style={{
+                          color: "#ccd6f6",
+                        }}
+                      />
+                    </Link>
+                  </Box>
+                </Box>
+              </Box>
             </Box>
-            <Box>
+            <Box className={classes.projectLinks}>
               <Box style={{ display: "flex", justifyContent: "space-evenly" }}>
-                <Typography variant="body2">React.js</Typography>
-                <Typography variant="body2">Firebase</Typography>
-                <Typography variant="body2">CSS</Typography>
+                <Typography variant="body2">HTML5</Typography>
+                <Typography variant="body2">Bootstrap</Typography>
+                <Typography variant="body2">CSS3</Typography>
                 <Typography variant="body2">SCSS</Typography>
               </Box>
               <Box
@@ -268,7 +393,13 @@ export const ProjectContainer = () => {
                     cursor: "pointer",
                   }}
                 >
-                  <AddToHomeScreenIcon />
+                  <Link href="https://aamir-mallick.github.io/zomato-replica/">
+                    <AddToHomeScreenIcon
+                      style={{
+                        color: "#ccd6f6",
+                      }}
+                    />
+                  </Link>
                 </Box>
                 <Box
                   style={{
@@ -277,7 +408,13 @@ export const ProjectContainer = () => {
                     cursor: "pointer",
                   }}
                 >
-                  <GitHubIcon />
+                  <Link href="https://github.com/Aamir-Mallick/zomato-replica">
+                    <GitHubIcon
+                      style={{
+                        color: "#ccd6f6",
+                      }}
+                    />
+                  </Link>
                 </Box>
               </Box>
             </Box>
