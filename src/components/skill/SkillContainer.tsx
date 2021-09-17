@@ -8,15 +8,28 @@ import {
   IconButton,
   ListItemIcon,
 } from "@material-ui/core";
+import { motion } from "framer-motion";
 import { useStyles } from "./useStyles";
 import DoneAllIcon from "@material-ui/icons/DoneAll";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 
-export const SkillContainer = () => {
+type shiftProps = {
+  shift: boolean;
+  work: boolean;
+};
+
+export const SkillContainer = (props: shiftProps) => {
   const classes = useStyles();
+  const { shift, work } = props;
+
   return (
     <Box id="skill" className={classes.skillMainContainer}>
-      <Box style={{ margin: "10px auto" }}>
+      <motion.div
+        initial={{ x: -300, opacity: 0 }}
+        animate={{ x: shift ? 0 : -300, opacity: shift ? 1 : 0 }}
+        transition={{ delay: 0, duration: 1 }}
+        style={{ margin: "10px auto" }}
+      >
         <Typography
           style={{
             textAlign: "center",
@@ -30,8 +43,13 @@ export const SkillContainer = () => {
         >
           Skills
         </Typography>
-      </Box>
-      <Box className={classes.skillCardMainContainer}>
+      </motion.div>
+      <motion.div
+        initial={{ y: -300, opacity: 0 }}
+        animate={{ y: shift ? 0 : -300, opacity: shift ? 1 : 0 }}
+        transition={{ delay: 0, duration: 1 }}
+        className={classes.skillCardMainContainer}
+      >
         <Box>
           <List component="nav" aria-label="main mailbox folders">
             {[
@@ -76,12 +94,22 @@ export const SkillContainer = () => {
             })}
           </List>
         </Box>
-      </Box>
+      </motion.div>
       <Box className={classes.workMainConatiner}>
-        <Typography className={classes.workHeadingContainer} variant="h4">
+        <motion.h4
+          initial={{ x: -300, opacity: 0 }}
+          animate={{ x: work ? 0 : -300, opacity: work ? 1 : 0 }}
+          transition={{ delay: 0, duration: 1 }}
+          className={classes.workHeadingContainer}
+        >
           Where I work
-        </Typography>
-        <Box className={classes.workContainer}>
+        </motion.h4>
+        <motion.div
+          initial={{ y: -300, opacity: 0 }}
+          animate={{ y: work ? 0 : -300, opacity: work ? 1 : 0 }}
+          transition={{ delay: 0, duration: 1 }}
+          className={classes.workContainer}
+        >
           <Box>
             <Typography
               style={{ color: "#ccd6f6", marginTop: "3px", fontWeight: 900 }}
@@ -126,7 +154,7 @@ export const SkillContainer = () => {
               </ListItem>
             </List>
           </Box>
-        </Box>
+        </motion.div>
       </Box>
     </Box>
   );

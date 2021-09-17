@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { HeaderNavBar } from "../src/components/headerNavBar/HeaderNavBar";
 import { AboutSection } from "../src/components/aboutSection/AboutSection";
 import { SkillContainer } from "../src/components/skill/SkillContainer";
@@ -16,7 +16,7 @@ import {
   Zoom,
   Link,
 } from "@material-ui/core";
-
+import { motion } from "framer-motion";
 import "aos/dist/aos.css";
 import GitHubIcon from "@material-ui/icons/GitHub";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
@@ -58,12 +58,77 @@ export const useStyles = makeStyles((theme) => ({
     },
   },
 }));
-
 export default function Home() {
+  const rateRef = React.useRef(0);
   const classes = useStyles();
+  const [pageShift, SetPageShift] = useState(0);
+  const [shiftFlag, setShiftFlag] = useState(true);
+  const [shiftFlagSkill, SetShiftFlagSkill] = useState(true);
+  const [workShift, SetWorkShift] = useState(true);
+  const [shiftFlagProject, SetShiftFlagProject] = useState(true);
+  const [projectTwo, setProjectTwo] = useState(true);
+  const [projectThree, setProjectThree] = useState(true);
+  const [shiftFlagContact, SetShiftFlagConatct] = useState(true);
+
+  const handleScroll = () => {
+    rateRef.current = window.pageYOffset;
+    // console.log("scroll", shiftFlag, pageShift);
+    SetPageShift(window.pageYOffset);
+    if (window.pageYOffset > 180) {
+      setShiftFlag(false);
+    }
+    if (window.pageYOffset < 80) {
+      setShiftFlag(true);
+    }
+    if (window.pageYOffset > 630) {
+      SetShiftFlagSkill(false);
+    }
+    if (window.pageYOffset < 380) {
+      SetShiftFlagSkill(true);
+    }
+    if (window.pageYOffset > 1080) {
+      SetWorkShift(false);
+    }
+    if (window.pageYOffset < 1081) {
+      SetWorkShift(true);
+    }
+    if (window.pageYOffset > 1400) {
+      SetShiftFlagProject(false);
+    }
+    if (window.pageYOffset < 1400) {
+      SetShiftFlagProject(true);
+    }
+    if (window.pageYOffset > 1800) {
+      setProjectTwo(false);
+    }
+    if (window.pageYOffset < 1733) {
+      setProjectTwo(true);
+    }
+    if (window.pageYOffset > 2253) {
+      setProjectThree(false);
+    }
+    if (window.pageYOffset < 2127) {
+      setProjectThree(true);
+    }
+    if (window.pageYOffset > 2600) {
+      SetShiftFlagConatct(false);
+    }
+    if (window.pageYOffset < 2580) {
+      SetShiftFlagConatct(true);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
     <div style={{ backgroundColor: "#041733" }}>
+      {/* {console.log("hehe", pageShift, shiftFlag)} */}
       <Box className={classes.linkContainer}>
         <Box className={classes.iconeHeight}>
           <Link href="https://github.com/Aamir-Mallick">
@@ -88,21 +153,21 @@ export default function Home() {
           aamirmallick71@gmail.com
         </Typography>
       </Box>
-      <Zoom in={true}>
+      <motion.div exit={{ opacity: 0 }}>
         <HeaderNavBar />
-      </Zoom>
-      <Zoom in={true}>
-        <AboutSection />
-      </Zoom>
-      <Zoom in={true}>
-        <SkillContainer />
-      </Zoom>
-      <Zoom in={true}>
-        <ProjectContainer />
-      </Zoom>
-      <Zoom in={true}>
-        <Contact />
-      </Zoom>
+
+        <AboutSection shift={!shiftFlag} />
+
+        <SkillContainer shift={!shiftFlagSkill} work={!workShift} />
+
+        <ProjectContainer
+          shift={!shiftFlagProject}
+          projectTwo={!projectTwo}
+          projectThree={!projectThree}
+        />
+
+        <Contact shift={!shiftFlagContact} />
+      </motion.div>
     </div>
   );
 }

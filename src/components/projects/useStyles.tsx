@@ -124,4 +124,19 @@ export const useStyles = makeStyles((theme) => ({
       height: "180px",
     },
   },
+  somethingClass: {
+    fontSize: "2.125rem",
+    [theme.breakpoints.down("xs")]: {
+      fontSize: "1.5rem",
+    },
+  },
+  dashClass: {
+    width: "350px",
+    marginLeft: "15px",
+    backgroundColor: "#68686a",
+    height: "1px",
+    [theme.breakpoints.down("xs")]: {
+      display: "none",
+    },
+  },
 }));

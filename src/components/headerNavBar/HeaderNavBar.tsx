@@ -34,7 +34,7 @@ export const HeaderNavBar = () => {
               letterSpacing: "2px",
             }}
           >
-            Protfolio
+            Aamir Mallick
           </Typography>
         </Box>
         <Box className={classes.headerNavigationContainer}>
@@ -73,7 +73,7 @@ export const HeaderNavBar = () => {
       <>
         <Box className={classes.headingContainer}>
           <Typography color="secondary" variant="h5">
-            Protfolio
+            Aamir Mallick
           </Typography>
         </Box>
         <Box className={classes.navIcons}>

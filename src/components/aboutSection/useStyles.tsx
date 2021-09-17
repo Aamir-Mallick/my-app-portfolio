@@ -38,11 +38,28 @@ export const useStyles = makeStyles((theme) => ({
     paddingLeft: "2rem",
   },
   imageContainer: {
-    // width: "300px",
+    width: "100%",
     height: "200px",
     backgroundImage: `url("/aamir.jpg")`,
-    // borderRadius: "100%",
+    borderRadius: "5px",
     backgroundSize: "cover",
-    border: "5px solid #64ffda",
+    // border: "5px solid #64ffda",
+    position: "absolute",
+    top: "10px",
+    left: "10px",
+    zIndex: 200,
+    [theme.breakpoints.down("xs")]: {
+      width: "262px",
+      left: "10px",
+    },
+  },
+  aboutDash: {
+    width: "250px",
+    marginLeft: "15px",
+    backgroundColor: "red",
+    border: "1px solid #68686a",
+    [theme.breakpoints.down("xs")]: {
+      display: "none",
+    },
   },
 }));

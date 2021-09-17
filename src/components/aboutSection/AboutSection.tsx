@@ -7,37 +7,31 @@ import {
   Container,
 } from "@material-ui/core";
 import { useStyles } from "./useStyles";
-// import TypeWriterEffect from "react-typewriter-effect";
+import { motion } from "framer-motion";
 
-export const AboutSection = () => {
+type shiftProps = {
+  shift: boolean;
+};
+
+export const AboutSection = (props: shiftProps) => {
   const classes = useStyles();
+  const { shift } = props;
+  // console.log("ahha", shift);
   return (
-    <>
+    <motion.div
+      initial={{ y: -300, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ delay: 0.3, duration: 2 }}
+    >
       <Box id="about" className={classes.aboutMainContainer}>
         <Container maxWidth="md" className={classes.textContainer}>
           <Typography
             style={{ color: "#ccd6f6", fontWeight: 900, fontFamily: "Calibre" }}
             variant="h2"
           >
-            Md Aamir Mallick.
+            I am web Developer
           </Typography>
-          {/* <TypeWriterEffect
-            textStyle={{
-              fontFamily: "Red Hat Display",
-              color: "#3F3D56",
-              fontWeight: 900,
-              fontSize: "1.5em",
-            }}
-            startDelay={2000}
-            cursorColor="#3F3D56"
-            multiText={[
-              "I am Md Aamir Mallick",
-              "I am front-end developer",
-              "I play with back-end as well",
-            ]}
-            multiTextDelay={1000}
-            typeSpeed={30}
-          /> */}
+
           <Typography
             style={{
               color: "#8892b0",
@@ -74,47 +68,68 @@ export const AboutSection = () => {
           </Box>
         </Container>
         <Container maxWidth="md">
-          <Box style={{ display: "flex", alignItems: "center" }}>
-            <Typography variant="h4" color="secondary">
-              About Me
-            </Typography>
-            <Box
-              style={{
-                width: "250px",
-                marginLeft: "15px",
-                backgroundColor: "red",
-                border: "1px solid #68686a",
-              }}
-            ></Box>
-          </Box>
-          <Box style={{ display: "flex", color: "#8892b0", flexWrap: "wrap" }}>
-            <Box style={{ width: "400px", margin: "1rem auto" }}>
-              Hello! My name is Aamir Mallick and I enjoy creating things that
-              live on the internet. My interest in web development started back
-              in 2018 when I was in the college, I used see the different web
-              sites, i always wonder how these web application has been
-              developed, I have stared with html and css i used to create samll
-              web site using html and css then later on i have stared working on
-              little big web site, started cloning famous web application, after
-              that i start learnign javascript that is something like miracle, I
-              have stared interacting on user interaction, that was my first
-              attempt to learnig javascript, then i move to react.js and have
-              worked some many project where react.js was primary technology.
-              that how i have stared in to web development.
-            </Box>
-            <Box
-              style={{
-                width: "400px",
-                height: "200px",
-                margin: "1rem auto",
-                // border: "1px solid #fff",
-              }}
+          <motion.div>
+            <motion.div
+              initial={{ x: -300, opacity: 0 }}
+              animate={{ x: shift ? 0 : -300, opacity: shift ? 1 : 0 }}
+              transition={{ delay: 0, duration: 1 }}
+              style={{ display: "flex", alignItems: "center" }}
             >
-              <Box className={classes.imageContainer}></Box>
+              <Typography variant="h4" color="secondary">
+                About Me
+              </Typography>
+              <Box
+                className={classes.aboutDash}
+                style={{
+                  width: "250px",
+                  marginLeft: "15px",
+                  backgroundColor: "red",
+                  border: "1px solid #68686a",
+                }}
+              ></Box>
+            </motion.div>
+            <Box
+              style={{ display: "flex", color: "#8892b0", flexWrap: "wrap" }}
+            >
+              <motion.div
+                initial={{ y: -300, opacity: 0 }}
+                animate={{ y: shift ? 0 : -300, opacity: shift ? 1 : 0 }}
+                transition={{ delay: 0, duration: 1 }}
+                style={{ width: "400px", margin: "1rem auto" }}
+              >
+                Hello! My name is Aamir Mallick and I enjoy creating things that
+                live on the internet. My interest in web development started
+                back in 2018 when I was in the college, I used see the different
+                web sites, I always wonder how these web application has been
+                developed, I have stared with html and css, I used to create
+                samll web site using html and css then later on I have stared
+                working on little big web site, started cloning famous web
+                application, after that i start learning javascript that is
+                something like miracle, I have stared working on user
+                interaction, that was my first attempt to learnig javascript,
+                then I moved to react.js and I have worked many projects where
+                react.js was primary technology. that how I have stared in to
+                web development.
+              </motion.div>
+              <motion.div
+                initial={{ y: 300, opacity: 0 }}
+                animate={{ y: shift ? 0 : 300, opacity: shift ? 1 : 0 }}
+                transition={{ delay: 0, duration: 1 }}
+                style={{
+                  width: "400px",
+                  height: "200px",
+                  margin: "1rem auto",
+                  border: "3px solid #64ffda",
+                  borderRadius: "5px",
+                  position: "relative",
+                }}
+              >
+                <Box className={classes.imageContainer}></Box>
+              </motion.div>
             </Box>
-          </Box>
+          </motion.div>
         </Container>
       </Box>
-    </>
+    </motion.div>
   );
 };

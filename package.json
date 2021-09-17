@@ -11,10 +11,10 @@
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
     "aos": "^2.3.4",
+    "framer-motion": "^4.1.17",
     "next": "11.0.1",
     "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-typewriter-effect": "^1.1.0"
+    "react-dom": "17.0.2"
   },
   "devDependencies": {
     "@types/react": "17.0.11",

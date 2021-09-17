@@ -7,34 +7,43 @@ import {
   Grid,
   Button,
 } from "@material-ui/core";
+import { motion } from "framer-motion";
 import { useStyles } from "./useStyles";
 import AddToHomeScreenIcon from "@material-ui/icons/AddToHomeScreen";
 import GitHubIcon from "@material-ui/icons/GitHub";
 
-export const ProjectContainer = () => {
+type shiftProps = {
+  shift: boolean;
+  projectTwo: boolean;
+  projectThree: boolean;
+};
+
+export const ProjectContainer = (props: shiftProps) => {
   const classes = useStyles();
+  const { shift, projectTwo, projectThree } = props;
 
   return (
     <Box id="project" className={classes.root}>
-      <Box
+      <motion.div
+        initial={{ x: -300, opacity: 0 }}
+        animate={{ x: shift ? 0 : -300, opacity: shift ? 1 : 0 }}
+        transition={{ delay: 0, duration: 1 }}
         style={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
         }}
       >
-        <Typography variant="h4" color="secondary">
+        <Typography
+          className={classes.somethingClass}
+          variant="h5"
+          color="secondary"
+        >
           Some Things I have build
         </Typography>
-        <Box
-          style={{
-            width: "350px",
-            marginLeft: "15px",
-            backgroundColor: "#68686a",
-            height: "1px",
-          }}
-        ></Box>
-      </Box>
+
+        <Box className={classes.dashClass}></Box>
+      </motion.div>
       <Container maxWidth="md" className={classes.contentContainer}>
         <Box
           className={classes.projectMainConatiner}
@@ -42,15 +51,31 @@ export const ProjectContainer = () => {
             position: "relative",
           }}
         >
-          <Box className={classes.imageContainer}>
+          <motion.div
+            initial={{ x: -300, opacity: 0 }}
+            animate={{
+              x: shift ? 0 : -300,
+              opacity: shift ? 1 : 0,
+            }}
+            transition={{ delay: 0, duration: 1 }}
+            className={classes.imageContainer}
+          >
             <img
               src={"../../../fodify.png"}
               className={classes.imageBox}
               width="100%"
               height="100%"
             />
-          </Box>
-          <Box className={classes.projectContentContainer}>
+          </motion.div>
+          <motion.div
+            initial={{ y: 300, opacity: 0 }}
+            animate={{
+              y: shift ? 0 : 300,
+              opacity: shift ? 1 : 0,
+            }}
+            transition={{ delay: 0, duration: 1 }}
+            className={classes.projectContentContainer}
+          >
             <Typography
               className={classes.projectName}
               variant="h4"
@@ -59,12 +84,8 @@ export const ProjectContainer = () => {
               Fodify
             </Typography>
             <Box className={classes.projectContentBox}>
-              <Typography
-                className={classes.projectNameMobile}
-                variant="h4"
-                align="right"
-              >
-                Zomato Clone
+              <Typography variant="h4" className={classes.projectNameMobile}>
+                Fodify
               </Typography>
               <Typography variant="body2" className={classes.workTextContent}>
                 It was an online food delivery application, I have implemented
@@ -72,14 +93,14 @@ export const ProjectContainer = () => {
                 details"
               </Typography>
               <Box className={classes.projectLinksMobile}>
-                <Box
+                <motion.div
                   style={{ display: "flex", justifyContent: "space-evenly" }}
                 >
                   <Typography variant="body2">HTML5</Typography>
                   <Typography variant="body2">Bootstrap</Typography>
                   <Typography variant="body2">CSS3</Typography>
                   <Typography variant="body2">SCSS</Typography>
-                </Box>
+                </motion.div>
                 <Box
                   style={{
                     display: "flex",
@@ -166,7 +187,7 @@ export const ProjectContainer = () => {
                 </Box>
               </Box>
             </Box>
-          </Box>
+          </motion.div>
         </Box>
         <Box
           className={classes.projectMainConatiner}
@@ -174,7 +195,15 @@ export const ProjectContainer = () => {
             position: "relative",
           }}
         >
-          <Box className={classes.projectContentContainerReverse}>
+          <motion.div
+            initial={{ x: 300, opacity: 0 }}
+            animate={{
+              x: projectTwo ? 0 : 300,
+              opacity: projectTwo ? 1 : 0,
+            }}
+            transition={{ delay: 0, duration: 1 }}
+            className={classes.projectContentContainerReverse}
+          >
             <Typography
               className={classes.projectName}
               variant="h4"
@@ -191,9 +220,9 @@ export const ProjectContainer = () => {
                 Starweaver
               </Typography>
               <Typography variant="body2" className={classes.workTextContent}>
-                It was learnig web application, where used can learn by worl
-                class instructor, it was production application, I have worked
-                on different UI section
+                It was learnig web application, where user can learn from class
+                instructor, it was production application, I have worked on
+                different UI section
               </Typography>
               <Box className={classes.projectLinksMobile}>
                 <Box
@@ -279,15 +308,20 @@ export const ProjectContainer = () => {
                 </Box>
               </Box>
             </Box>
-          </Box>
-          <Box className={classes.imageContainer}>
+          </motion.div>
+          <motion.div
+            initial={{ y: 300, opacity: 0 }}
+            animate={{ y: projectTwo ? 0 : 300, opacity: projectTwo ? 1 : 0 }}
+            transition={{ delay: 0, duration: 1 }}
+            className={classes.imageContainer}
+          >
             <img
               src={"../../../starweaver.png"}
               width="100%"
               height="100%"
               className={classes.imageBox}
             />
-          </Box>
+          </motion.div>
         </Box>
         <Box
           className={classes.projectMainConatiner}
@@ -295,15 +329,31 @@ export const ProjectContainer = () => {
             position: "relative",
           }}
         >
-          <Box className={classes.imageContainer}>
+          <motion.div
+            initial={{ x: -300, opacity: 0 }}
+            animate={{
+              x: projectThree ? 0 : -300,
+              opacity: projectThree ? 1 : 0,
+            }}
+            transition={{ delay: 0, duration: 1 }}
+            className={classes.imageContainer}
+          >
             <img
               src={"../../../zomato.png"}
               width="100%"
               height="100%"
               className={classes.imageBox}
             />
-          </Box>
-          <Box className={classes.projectContentContainer}>
+          </motion.div>
+          <motion.div
+            initial={{ y: 300, opacity: 0 }}
+            animate={{
+              y: projectThree ? 0 : 300,
+              opacity: projectThree ? 1 : 0,
+            }}
+            transition={{ delay: 0, duration: 1 }}
+            className={classes.projectContentContainer}
+          >
             <Typography
               className={classes.projectName}
               variant="h4"
@@ -320,8 +370,8 @@ export const ProjectContainer = () => {
                 Zomato Clone
               </Typography>
               <Typography variant="body2" className={classes.workTextContent}>
-                It was clone of famous food delivery application, i cloned it
-                home page as same as it was in real,
+                It was clone of famous food delivery application, i have cloned
+                its home page as same as it was in real,
               </Typography>
               <Box className={classes.projectLinksMobile}>
                 <Box
@@ -418,7 +468,7 @@ export const ProjectContainer = () => {
                 </Box>
               </Box>
             </Box>
-          </Box>
+          </motion.div>
         </Box>
       </Container>
     </Box>
