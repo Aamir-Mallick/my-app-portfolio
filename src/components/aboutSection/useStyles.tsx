@@ -49,7 +49,7 @@ export const useStyles = makeStyles((theme) => ({
     left: "10px",
     zIndex: 200,
     [theme.breakpoints.down("xs")]: {
-      width: "262px",
+      width: "94%",
       left: "10px",
     },
   },
