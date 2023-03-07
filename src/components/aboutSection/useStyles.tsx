@@ -43,6 +43,9 @@ export const useStyles = makeStyles((theme) => ({
     backgroundImage: `url("/aamir.jpg")`,
     borderRadius: "5px",
     backgroundSize: "cover",
+
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
     // border: "5px solid #64ffda",
     position: "absolute",
     top: "10px",
