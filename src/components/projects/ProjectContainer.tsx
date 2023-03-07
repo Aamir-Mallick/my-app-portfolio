@@ -23,7 +23,7 @@ export const ProjectContainer = (props: shiftProps) => {
   const { shift, projectTwo, projectThree } = props;
 
   return (
-    <Box id="project" className={classes.root}>
+    <Box id='project' className={classes.root}>
       <motion.div
         initial={{ x: -300, opacity: 0 }}
         animate={{ x: shift ? 0 : -300, opacity: shift ? 1 : 0 }}
@@ -36,15 +36,15 @@ export const ProjectContainer = (props: shiftProps) => {
       >
         <Typography
           className={classes.somethingClass}
-          variant="h5"
-          color="secondary"
+          variant='h5'
+          color='secondary'
         >
-          Some Things I have build
+          Project I worked on
         </Typography>
 
         <Box className={classes.dashClass}></Box>
       </motion.div>
-      <Container maxWidth="md" className={classes.contentContainer}>
+      <Container maxWidth='md' className={classes.contentContainer}>
         <Box
           className={classes.projectMainConatiner}
           style={{
@@ -63,8 +63,8 @@ export const ProjectContainer = (props: shiftProps) => {
             <img
               src={"../../../fodify.png"}
               className={classes.imageBox}
-              width="100%"
-              height="100%"
+              width='100%'
+              height='100%'
             />
           </motion.div>
           <motion.div
@@ -78,16 +78,16 @@ export const ProjectContainer = (props: shiftProps) => {
           >
             <Typography
               className={classes.projectName}
-              variant="h4"
-              align="right"
+              variant='h4'
+              align='right'
             >
               Fodify
             </Typography>
             <Box className={classes.projectContentBox}>
-              <Typography variant="h4" className={classes.projectNameMobile}>
+              <Typography variant='h4' className={classes.projectNameMobile}>
                 Fodify
               </Typography>
-              <Typography variant="body2" className={classes.workTextContent}>
+              <Typography variant='body2' className={classes.workTextContent}>
                 It was an online food delivery application, I have implemented
                 all feature like "Add to cart", "Search for cusins", "Hotel
                 details"
@@ -96,10 +96,10 @@ export const ProjectContainer = (props: shiftProps) => {
                 <motion.div
                   style={{ display: "flex", justifyContent: "space-evenly" }}
                 >
-                  <Typography variant="body2">HTML5</Typography>
-                  <Typography variant="body2">Bootstrap</Typography>
-                  <Typography variant="body2">CSS3</Typography>
-                  <Typography variant="body2">SCSS</Typography>
+                  <Typography variant='body2'>HTML5</Typography>
+                  <Typography variant='body2'>Bootstrap</Typography>
+                  <Typography variant='body2'>CSS3</Typography>
+                  <Typography variant='body2'>SCSS</Typography>
                 </motion.div>
                 <Box
                   style={{
@@ -115,7 +115,7 @@ export const ProjectContainer = (props: shiftProps) => {
                       cursor: "pointer",
                     }}
                   >
-                    <Link href="https://naughty-wilson-7983d0.netlify.app/">
+                    <Link href='https://naughty-wilson-7983d0.netlify.app/'>
                       <AddToHomeScreenIcon
                         style={{
                           color: "#ccd6f6",
@@ -130,7 +130,7 @@ export const ProjectContainer = (props: shiftProps) => {
                       cursor: "pointer",
                     }}
                   >
-                    <Link href="https://github.com/Aamir-Mallick/fodify-Application">
+                    <Link href='https://github.com/Aamir-Mallick/fodify-Application'>
                       <GitHubIcon
                         style={{
                           color: "#ccd6f6",
@@ -143,10 +143,10 @@ export const ProjectContainer = (props: shiftProps) => {
             </Box>
             <Box className={classes.projectLinks}>
               <Box style={{ display: "flex", justifyContent: "space-evenly" }}>
-                <Typography variant="body2">React.js</Typography>
-                <Typography variant="body2">Firebase</Typography>
-                <Typography variant="body2">CSS</Typography>
-                <Typography variant="body2">SCSS</Typography>
+                <Typography variant='body2'>React.js</Typography>
+                <Typography variant='body2'>Firebase</Typography>
+                <Typography variant='body2'>CSS</Typography>
+                <Typography variant='body2'>SCSS</Typography>
               </Box>
               <Box
                 style={{
@@ -162,7 +162,7 @@ export const ProjectContainer = (props: shiftProps) => {
                     cursor: "pointer",
                   }}
                 >
-                  <Link href="https://naughty-wilson-7983d0.netlify.app/">
+                  <Link href='https://naughty-wilson-7983d0.netlify.app/'>
                     <AddToHomeScreenIcon
                       style={{
                         color: "#ccd6f6",
@@ -177,7 +177,7 @@ export const ProjectContainer = (props: shiftProps) => {
                     cursor: "pointer",
                   }}
                 >
-                  <Link href="https://github.com/Aamir-Mallick/fodify-Application">
+                  <Link href='https://github.com/Aamir-Mallick/fodify-Application'>
                     <GitHubIcon
                       style={{
                         color: "#ccd6f6",
@@ -206,20 +206,20 @@ export const ProjectContainer = (props: shiftProps) => {
           >
             <Typography
               className={classes.projectName}
-              variant="h4"
-              align="left"
+              variant='h4'
+              align='left'
             >
               Starweaver
             </Typography>
             <Box className={classes.projectContentBoxReverse}>
               <Typography
                 className={classes.projectNameMobile}
-                variant="h4"
-                align="right"
+                variant='h4'
+                align='right'
               >
                 Starweaver
               </Typography>
-              <Typography variant="body2" className={classes.workTextContent}>
+              <Typography variant='body2' className={classes.workTextContent}>
                 It was learnig web application, where user can learn from class
                 instructor, it was production application, I have worked on
                 different UI section
@@ -228,10 +228,10 @@ export const ProjectContainer = (props: shiftProps) => {
                 <Box
                   style={{ display: "flex", justifyContent: "space-evenly" }}
                 >
-                  <Typography variant="body2">HTML5</Typography>
-                  <Typography variant="body2">Bootstrap</Typography>
-                  <Typography variant="body2">CSS3</Typography>
-                  <Typography variant="body2">SCSS</Typography>
+                  <Typography variant='body2'>HTML5</Typography>
+                  <Typography variant='body2'>Bootstrap</Typography>
+                  <Typography variant='body2'>CSS3</Typography>
+                  <Typography variant='body2'>SCSS</Typography>
                 </Box>
                 <Box
                   style={{
@@ -247,7 +247,7 @@ export const ProjectContainer = (props: shiftProps) => {
                       cursor: "pointer",
                     }}
                   >
-                    <Link href="https://go.starweaver.com/on-air">
+                    <Link href='https://go.starweaver.com/on-air'>
                       <AddToHomeScreenIcon
                         style={{
                           color: "#ccd6f6",
@@ -269,11 +269,11 @@ export const ProjectContainer = (props: shiftProps) => {
             </Box>
             <Box className={classes.projectLinks}>
               <Box style={{ display: "flex", justifyContent: "space-evenly" }}>
-                <Typography variant="body2">React.js</Typography>
-                <Typography variant="body2">Redux</Typography>
-                <Typography variant="body2">Node.js</Typography>
-                <Typography variant="body2">Firebase</Typography>
-                <Typography variant="body2">Material UI</Typography>
+                <Typography variant='body2'>React.js</Typography>
+                <Typography variant='body2'>Redux</Typography>
+                <Typography variant='body2'>Node.js</Typography>
+                <Typography variant='body2'>Firebase</Typography>
+                <Typography variant='body2'>Material UI</Typography>
               </Box>
               <Box
                 style={{
@@ -289,7 +289,7 @@ export const ProjectContainer = (props: shiftProps) => {
                     cursor: "pointer",
                   }}
                 >
-                  <Link href="https://go.starweaver.com/on-air">
+                  <Link href='https://go.starweaver.com/on-air'>
                     <AddToHomeScreenIcon
                       style={{
                         color: "#ccd6f6",
@@ -317,8 +317,8 @@ export const ProjectContainer = (props: shiftProps) => {
           >
             <img
               src={"../../../starweaver.png"}
-              width="100%"
-              height="100%"
+              width='100%'
+              height='100%'
               className={classes.imageBox}
             />
           </motion.div>
@@ -339,9 +339,9 @@ export const ProjectContainer = (props: shiftProps) => {
             className={classes.imageContainer}
           >
             <img
-              src={"../../../zomato.png"}
-              width="100%"
-              height="100%"
+              src={"../../../yolo.png"}
+              width='100%'
+              height='100%'
               className={classes.imageBox}
             />
           </motion.div>
@@ -356,31 +356,34 @@ export const ProjectContainer = (props: shiftProps) => {
           >
             <Typography
               className={classes.projectName}
-              variant="h4"
-              align="right"
+              variant='h4'
+              align='right'
             >
-              Zomato Clone
+              Yolo Connects
             </Typography>
             <Box className={classes.projectContentBox}>
               <Typography
                 className={classes.projectNameMobile}
-                variant="h4"
-                align="right"
+                variant='h4'
+                align='right'
               >
-                Zomato Clone
+                Yolo Connects
               </Typography>
-              <Typography variant="body2" className={classes.workTextContent}>
-                It was clone of famous food delivery application, i have cloned
-                its home page as same as it was in real,
+              <Typography variant='body2' className={classes.workTextContent}>
+                This project was based on third party API consumption. I
+                integrated Facebook, Instagram & LinkedIn APIs enabling users to
+                schedule posts to the application.
               </Typography>
               <Box className={classes.projectLinksMobile}>
                 <Box
                   style={{ display: "flex", justifyContent: "space-evenly" }}
                 >
-                  <Typography variant="body2">HTML5</Typography>
-                  <Typography variant="body2">Bootstrap</Typography>
-                  <Typography variant="body2">CSS3</Typography>
-                  <Typography variant="body2">SCSS</Typography>
+                  <Typography variant='body2'>HTML5</Typography>
+                  <Typography variant='body2'>Bootstrap</Typography>
+                  <Typography variant='body2'>CSS3</Typography>
+                  <Typography variant='body2'>SCSS</Typography>
+                  <Typography variant='body2'>Next.js</Typography>
+                  <Typography variant='body2'>Node.js</Typography>
                 </Box>
                 <Box
                   style={{
@@ -396,7 +399,7 @@ export const ProjectContainer = (props: shiftProps) => {
                       cursor: "pointer",
                     }}
                   >
-                    <Link href="https://aamir-mallick.github.io/zomato-replica/">
+                    <Link href='https://app.yoloconnect.in/'>
                       <AddToHomeScreenIcon
                         style={{
                           color: "#ccd6f6",
@@ -411,7 +414,7 @@ export const ProjectContainer = (props: shiftProps) => {
                       cursor: "pointer",
                     }}
                   >
-                    <Link href="https://github.com/Aamir-Mallick/zomato-replica">
+                    <Link href='https://app.yoloconnect.in/'>
                       <GitHubIcon
                         style={{
                           color: "#ccd6f6",
@@ -424,10 +427,12 @@ export const ProjectContainer = (props: shiftProps) => {
             </Box>
             <Box className={classes.projectLinks}>
               <Box style={{ display: "flex", justifyContent: "space-evenly" }}>
-                <Typography variant="body2">HTML5</Typography>
-                <Typography variant="body2">Bootstrap</Typography>
-                <Typography variant="body2">CSS3</Typography>
-                <Typography variant="body2">SCSS</Typography>
+                <Typography variant='body2'>HTML5</Typography>
+                <Typography variant='body2'>Bootstrap</Typography>
+                <Typography variant='body2'>CSS3</Typography>
+                <Typography variant='body2'>SCSS</Typography>
+                <Typography variant='body2'>Next.js</Typography>
+                <Typography variant='body2'>Node.js</Typography>
               </Box>
               <Box
                 style={{
@@ -443,7 +448,7 @@ export const ProjectContainer = (props: shiftProps) => {
                     cursor: "pointer",
                   }}
                 >
-                  <Link href="https://aamir-mallick.github.io/zomato-replica/">
+                  <Link href='https://app.yoloconnect.in/'>
                     <AddToHomeScreenIcon
                       style={{
                         color: "#ccd6f6",
@@ -458,7 +463,7 @@ export const ProjectContainer = (props: shiftProps) => {
                     cursor: "pointer",
                   }}
                 >
-                  <Link href="https://github.com/Aamir-Mallick/zomato-replica">
+                  <Link href='https://app.yoloconnect.in/'>
                     <GitHubIcon
                       style={{
                         color: "#ccd6f6",
