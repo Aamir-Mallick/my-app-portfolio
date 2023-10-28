@@ -49,6 +49,7 @@ export const AboutSection = (props: shiftProps) => {
               marginTop: "1rem",
               maxWidth: "500px",
               fontWeight: 600,
+              fontSize: "1.5rem",
             }}
             variant="body2"
           >
@@ -95,7 +96,11 @@ export const AboutSection = (props: shiftProps) => {
                 initial={{ y: -300, opacity: 0 }}
                 animate={{ y: shift ? 0 : -300, opacity: shift ? 1 : 0 }}
                 transition={{ delay: 0, duration: 1 }}
-                style={{ width: "400px", margin: "1rem auto" }}
+                style={{
+                  width: "400px",
+                  margin: "1rem auto",
+                  fontSize: "1.5rem",
+                }}
               >
                 Hello! My name is Aamir Mallick and I enjoy creating things that
                 live on the internet. My interest in web development started
