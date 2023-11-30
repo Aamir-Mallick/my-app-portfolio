@@ -105,16 +105,15 @@ export const AboutSection = (props: shiftProps) => {
                 Hello! My name is Aamir Mallick and I enjoy creating things that
                 live on the internet. My interest in web development started
                 back in 2018 when I was in the college, I used see the different
-                web sites, I always wonder how these web application has been
-                developed, I have stared with html and css, I used to create
-                samll web site using html and css then later on I have stared
-                working on little big web site, started cloning famous web
-                application, after that i start learning javascript that is
-                something like miracle, I have stared working on user
-                interaction, that was my first attempt to learnig javascript,
-                then I moved to react.js and I have worked many projects where
-                react.js was primary technology. that how I have stared in to
-                web development.
+                web sites, I always wonder how these web application were
+                developed, I started with html and css, Used to create samll web
+                site using html and css, after that I moved to working on little
+                bigger web application. Started with cloning famous web
+                application, Also started learning javascript that is something
+                like miracle, working on user interaction, that was my first
+                attempt to learnig javascript, then I moved to react.js and I
+                worked on many projects where react.js was primary technology.
+                that how I have stared into my web development journey.
               </motion.div>
               <motion.div
                 initial={{ y: 300, opacity: 0 }}
