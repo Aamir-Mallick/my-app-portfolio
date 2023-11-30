@@ -351,7 +351,7 @@ export const ProjectContainer = (props: shiftProps) => {
               variant="h4"
               align="left"
             >
-              Starweaver
+              Poolfish
             </Typography>
             <Box className={classes.projectContentBoxReverse}>
               <Typography
@@ -359,7 +359,7 @@ export const ProjectContainer = (props: shiftProps) => {
                 variant="h4"
                 align="right"
               >
-                Starweaver
+                Poolfish
               </Typography>
               <Typography variant="body2" className={classes.workTextContent}>
                 Poolfish is an all-in-one workspace for liquidity providers —
@@ -462,6 +462,158 @@ export const ProjectContainer = (props: shiftProps) => {
               height="100%"
               className={classes.imageBox}
             />
+          </motion.div>
+        </Box>
+        <Box
+          className={classes.projectMainConatiner}
+          style={{
+            position: "relative",
+          }}
+        >
+          <motion.div
+            initial={{ x: -300, opacity: 0 }}
+            animate={{
+              x: projectThree ? 0 : -300,
+              opacity: projectThree ? 1 : 0,
+            }}
+            transition={{ delay: 0, duration: 1 }}
+            className={classes.imageContainer}
+          >
+            <img
+              src={"../../../talentsscrew.png"}
+              width="100%"
+              height="100%"
+              className={classes.imageBox}
+            />
+          </motion.div>
+          <motion.div
+            initial={{ y: 300, opacity: 0 }}
+            animate={{
+              y: projectThree ? 0 : 300,
+              opacity: projectThree ? 1 : 0,
+            }}
+            transition={{ delay: 0, duration: 1 }}
+            className={classes.projectContentContainer}
+          >
+            <Typography
+              className={classes.projectName}
+              variant="h4"
+              align="right"
+            >
+              Talents Crew
+            </Typography>
+            <Box className={classes.projectContentBox}>
+              <Typography
+                className={classes.projectNameMobile}
+                variant="h4"
+                align="right"
+              >
+                Talents Crew
+              </Typography>
+              <Typography variant="body2" className={classes.workTextContent}>
+                This project provide Communities & Groups TalentsCrew provides
+                an uplifting community experience in the spirit of human
+                camaraderie.
+              </Typography>
+              <Box className={classes.projectLinksMobile}>
+                <Box
+                  style={{ display: "flex", justifyContent: "space-evenly" }}
+                >
+                  <Typography variant="body2">React.js</Typography>
+                  <Typography variant="body2">Redux</Typography>
+                  <Typography variant="body2">CSS3</Typography>
+                  <Typography variant="body2">SCSS</Typography>
+                  <Typography variant="body2">Next.js</Typography>
+                  <Typography variant="body2">Node.js</Typography>
+                </Box>
+                <Box
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    marginTop: "1rem",
+                  }}
+                >
+                  <Box
+                    style={{
+                      marginRight: "1.5rem",
+                      color: "#ccd6f6",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <Link href="https://app.yoloconnect.in/">
+                      <AddToHomeScreenIcon
+                        style={{
+                          color: "#ccd6f6",
+                        }}
+                      />
+                    </Link>
+                  </Box>
+                  <Box
+                    style={{
+                      marginRight: "1.5rem",
+                      color: "#ccd6f6",
+                      cursor: "pointer",
+                    }}
+                  >
+                    <Link href="https://app.yoloconnect.in/">
+                      <GitHubIcon
+                        style={{
+                          color: "#ccd6f6",
+                        }}
+                      />
+                    </Link>
+                  </Box>
+                </Box>
+              </Box>
+            </Box>
+            <Box className={classes.projectLinks}>
+              <Box style={{ display: "flex", justifyContent: "space-evenly" }}>
+                <Typography variant="body2">React.js</Typography>
+                <Typography variant="body2">Redux</Typography>
+                <Typography variant="body2">CSS3</Typography>
+                <Typography variant="body2">SCSS</Typography>
+                <Typography variant="body2">Next.js</Typography>
+                <Typography variant="body2">Node.js</Typography>
+              </Box>
+              <Box
+                style={{
+                  display: "flex",
+                  justifyContent: "end",
+                  marginTop: "1rem",
+                }}
+              >
+                <Box
+                  style={{
+                    marginRight: "1.5rem",
+                    color: "#ccd6f6",
+                    cursor: "pointer",
+                  }}
+                >
+                  <Link href="https://talentscrew.com/">
+                    <AddToHomeScreenIcon
+                      style={{
+                        color: "#ccd6f6",
+                      }}
+                    />
+                  </Link>
+                </Box>
+                <Box
+                  style={{
+                    marginRight: "1.5rem",
+                    color: "#ccd6f6",
+                    cursor: "pointer",
+                  }}
+                >
+                  <Link href="https://talentscrew.com/">
+                    <GitHubIcon
+                      style={{
+                        color: "#ccd6f6",
+                      }}
+                    />
+                  </Link>
+                </Box>
+              </Box>
+            </Box>
           </motion.div>
         </Box>
       </Container>
