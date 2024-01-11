@@ -135,11 +135,11 @@ export default function Home() {
             <GitHubIcon style={{ color: "#64ffda", cursor: "pointer" }} />
           </Link>
         </Box>
-        <Box className={classes.iconeHeight}>
+        {/* <Box className={classes.iconeHeight}>
           <Link href="https://www.linkedin.com/in/aamir-mallick-b4b41a187/">
             <LinkedInIcon style={{ color: "#64ffda", cursor: "pointer" }} />
           </Link>
-        </Box>
+        </Box> */}
         <Box className={classes.iconeHeight}>
           <TwitterIcon style={{ color: "#64ffda", cursor: "pointer" }} />
         </Box>
