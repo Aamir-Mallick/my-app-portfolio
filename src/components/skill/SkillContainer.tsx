@@ -95,7 +95,7 @@ export const SkillContainer = (props: shiftProps) => {
           </List>
         </Box>
       </motion.div>
-      <Box style={{ fontSize: "1.5rem" }} className={classes.workMainConatiner}>
+      {/* <Box style={{ fontSize: "1.5rem" }} className={classes.workMainConatiner}>
         <motion.h4
           initial={{ x: -300, opacity: 0 }}
           animate={{ x: work ? 0 : -300, opacity: work ? 1 : 0 }}
@@ -155,7 +155,7 @@ export const SkillContainer = (props: shiftProps) => {
             </List>
           </Box>
         </motion.div>
-      </Box>
+      </Box> */}
     </Box>
   );
 };

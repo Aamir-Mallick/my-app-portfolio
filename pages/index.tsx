@@ -131,12 +131,12 @@ export default function Home() {
       {/* {console.log("hehe", pageShift, shiftFlag)} */}
       <Box className={classes.linkContainer}>
         <Box className={classes.iconeHeight}>
-          <Link href='https://github.com/Aamir-Mallick'>
+          <Link href="https://github.com/Aamir-Mallick">
             <GitHubIcon style={{ color: "#64ffda", cursor: "pointer" }} />
           </Link>
         </Box>
         <Box className={classes.iconeHeight}>
-          <Link href='https://www.linkedin.com/in/aamir-mallick-b4b41a187/'>
+          <Link href="https://www.linkedin.com/in/aamir-mallick-b4b41a187/">
             <LinkedInIcon style={{ color: "#64ffda", cursor: "pointer" }} />
           </Link>
         </Box>
@@ -144,17 +144,17 @@ export default function Home() {
           <TwitterIcon style={{ color: "#64ffda", cursor: "pointer" }} />
         </Box>
         <Box className={classes.iconeHeight}>
-          <Link href='https://www.instagram.com/aman_the_fire/'>
+          <Link href="https://www.instagram.com/aman_the_fire/">
             <InstagramIcon style={{ color: "#64ffda", cursor: "pointer" }} />
           </Link>
         </Box>
         <Box className={classes.lineContainer}></Box>
       </Box>
-      <Box className={classes.emailContainer}>
+      {/* <Box className={classes.emailContainer}>
         <Typography style={{ fontSize: "20px" }} variant='body2'>
           aamirmallick71@gmail.com
         </Typography>
-      </Box>
+      </Box> */}
       <motion.div exit={{ opacity: 0 }}>
         <HeaderNavBar />
 
