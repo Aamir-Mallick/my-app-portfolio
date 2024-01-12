@@ -104,6 +104,7 @@ export default function Home() {
     if (window.pageYOffset < 1433) {
       setProjectTwo(true);
     }
+
     if (window.pageYOffset > 1853) {
       setProjectThree(false);
     }
