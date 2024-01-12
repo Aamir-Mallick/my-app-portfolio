@@ -24,6 +24,7 @@ export const ProjectContainer = (props: shiftProps) => {
 
   return (
     <Box id="project" className={classes.root}>
+      {console.log("55", shift)}
       <motion.div
         initial={{ x: -300, opacity: 0 }}
         animate={{ x: shift ? 0 : -300, opacity: shift ? 1 : 0 }}

@@ -92,22 +92,22 @@ export default function Home() {
     if (window.pageYOffset < 1081) {
       SetWorkShift(true);
     }
-    if (window.pageYOffset > 1400) {
+    if (window.pageYOffset > 1200) {
       SetShiftFlagProject(false);
     }
-    if (window.pageYOffset < 1400) {
+    if (window.pageYOffset < 1201) {
       SetShiftFlagProject(true);
     }
-    if (window.pageYOffset > 1800) {
+    if (window.pageYOffset > 1400) {
       setProjectTwo(false);
     }
-    if (window.pageYOffset < 1733) {
+    if (window.pageYOffset < 1433) {
       setProjectTwo(true);
     }
-    if (window.pageYOffset > 2253) {
+    if (window.pageYOffset > 1853) {
       setProjectThree(false);
     }
-    if (window.pageYOffset < 2127) {
+    if (window.pageYOffset < 1727) {
       setProjectThree(true);
     }
     if (window.pageYOffset > 2600) {
