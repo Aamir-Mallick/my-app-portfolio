@@ -89,15 +89,13 @@ export const AboutSection = (props: shiftProps) => {
                 }}
               ></Box>
             </motion.div>
-            <Box
-              style={{ display: "flex", color: "#8892b0", flexWrap: "wrap" }}
-            >
+            <Box style={{ color: "#8892b0" }}>
               <motion.div
                 initial={{ y: -300, opacity: 0 }}
                 animate={{ y: shift ? 0 : -300, opacity: shift ? 1 : 0 }}
                 transition={{ delay: 0, duration: 1 }}
                 style={{
-                  width: "400px",
+                  width: "auto",
                   margin: "1rem auto",
                   fontSize: "1.5rem",
                 }}
@@ -115,7 +113,7 @@ export const AboutSection = (props: shiftProps) => {
                 worked on many projects where react.js was primary technology.
                 that how I have stared into my web development journey.
               </motion.div>
-              <motion.div
+              {/* <motion.div
                 initial={{ y: 300, opacity: 0 }}
                 animate={{ y: shift ? 0 : 300, opacity: shift ? 1 : 0 }}
                 transition={{ delay: 0, duration: 1 }}
@@ -129,7 +127,7 @@ export const AboutSection = (props: shiftProps) => {
                 }}
               >
                 <Box className={classes.imageContainer}></Box>
-              </motion.div>
+              </motion.div> */}
             </Box>
           </motion.div>
         </Container>
