@@ -100,18 +100,12 @@ export const AboutSection = (props: shiftProps) => {
                   fontSize: "1.5rem",
                 }}
               >
-                Hello! My name is Aamir Mallick and I enjoy creating things that
-                live on the internet. My interest in web development started
-                back in 2018 when I was in the college, I used see the different
-                web sites, I always wonder how these web application were
-                developed, I started with html and css, Used to create samll web
-                site using html and css, after that I moved to working on little
-                bigger web application. Started with cloning famous web
-                application, Also started learning javascript that is something
-                like miracle, working on user interaction, that was my first
-                attempt to learnig javascript, then I moved to react.js and I
-                worked on many projects where react.js was primary technology.
-                that how I have stared into my web development journey.
+                Hello there! I'm Aamir Mallick, a passionate and results-driven
+                freelance web developer with a knack for crafting dynamic and
+                visually appealing websites. With a keen eye for detail and a
+                commitment to excellence, I specialize in creating customized,
+                responsive, and user-friendly web solutions tailored to meet the
+                unique needs of my clients
               </motion.div>
               {/* <motion.div
                 initial={{ y: 300, opacity: 0 }}

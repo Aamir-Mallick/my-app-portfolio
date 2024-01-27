@@ -71,50 +71,43 @@ export default function Home() {
   const [shiftFlagContact, SetShiftFlagConatct] = useState(true);
 
   const handleScroll = () => {
-    rateRef.current = window.pageYOffset;
-    // console.log("scroll", shiftFlag, pageShift);
-    SetPageShift(window.pageYOffset);
-    if (window.pageYOffset > 180) {
+    rateRef.current = window.scrollY;
+    SetPageShift(window.scrollY);
+    if (window.scrollY > 180) {
       setShiftFlag(false);
     }
-    if (window.pageYOffset < 80) {
+    if (window.scrollY < 80) {
       setShiftFlag(true);
     }
-    if (window.pageYOffset > 630) {
+    if (window.scrollY > 521) {
       SetShiftFlagSkill(false);
     }
-    if (window.pageYOffset < 380) {
+    if (window.scrollY < 520) {
       SetShiftFlagSkill(true);
     }
-    if (window.pageYOffset > 1080) {
-      SetWorkShift(false);
-    }
-    if (window.pageYOffset < 1081) {
-      SetWorkShift(true);
-    }
-    if (window.pageYOffset > 1200) {
+    if (window.scrollY > 602) {
       SetShiftFlagProject(false);
     }
-    if (window.pageYOffset < 1201) {
+    if (window.scrollY < 601) {
       SetShiftFlagProject(true);
     }
-    if (window.pageYOffset > 1400) {
+    if (window.scrollY > 1000) {
       setProjectTwo(false);
     }
-    if (window.pageYOffset < 1433) {
+    if (window.scrollY < 999) {
       setProjectTwo(true);
     }
 
-    if (window.pageYOffset > 1853) {
+    if (window.scrollY > 1453) {
       setProjectThree(false);
     }
-    if (window.pageYOffset < 1727) {
+    if (window.scrollY < 1452) {
       setProjectThree(true);
     }
-    if (window.pageYOffset > 2600) {
+    if (window.scrollY > 2600) {
       SetShiftFlagConatct(false);
     }
-    if (window.pageYOffset < 2580) {
+    if (window.scrollY < 2580) {
       SetShiftFlagConatct(true);
     }
   };
@@ -129,7 +122,6 @@ export default function Home() {
 
   return (
     <div style={{ backgroundColor: "#041733" }}>
-      {/* {console.log("hehe", pageShift, shiftFlag)} */}
       <Box className={classes.linkContainer}>
         <Box className={classes.iconeHeight}>
           <Link href="https://github.com/Aamir-Mallick">
