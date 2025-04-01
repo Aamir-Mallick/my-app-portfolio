@@ -9,11 +9,7 @@ import {
 import { useStyles } from "./useStyles";
 import { motion } from "framer-motion";
 
-type shiftProps = {
-  shift: boolean;
-};
-
-export const AboutSection = (props: shiftProps) => {
+export const AboutSection = (props) => {
   const classes = useStyles();
   const { shift } = props;
   // console.log("ahha", shift);

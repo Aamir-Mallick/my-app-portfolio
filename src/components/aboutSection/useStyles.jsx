@@ -1,5 +1,4 @@
 import { makeStyles } from "@material-ui/core/styles";
-import img from "/main.jpg";
 
 export const useStyles = makeStyles((theme) => ({
   aboutMainContainer: {

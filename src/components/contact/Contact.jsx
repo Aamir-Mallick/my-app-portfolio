@@ -14,11 +14,7 @@ import LinkedInIcon from "@material-ui/icons/LinkedIn";
 import TwitterIcon from "@material-ui/icons/Twitter";
 import InstagramIcon from "@material-ui/icons/Instagram";
 
-type shiftProps = {
-  shift: boolean;
-};
-
-export const Contact = (props: shiftProps) => {
+export const Contact = (props) => {
   const classes = useStyles();
   const { shift } = props;
 

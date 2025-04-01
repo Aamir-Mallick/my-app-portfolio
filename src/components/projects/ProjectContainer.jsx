@@ -69,13 +69,7 @@ const projectContents = [
   },
 ];
 
-type shiftProps = {
-  shift: boolean;
-  projectTwo: boolean;
-  projectThree: boolean;
-};
-
-const Project = (props: any) => {
+const Project = (props) => {
   const { classes, projectTwo, title, content, tech, linkToSite, imgLocation } =
     props;
   return (
@@ -101,7 +95,7 @@ const Project = (props: any) => {
           </Typography>
           <Box className={classes.projectLinks}>
             <Box className={classes.projectLinksItems}>
-              {tech.map((techi: string, index: number) => {
+              {tech.map((techi, index) => {
                 return (
                   <Typography key={index} variant="body2">
                     {techi}
@@ -133,7 +127,7 @@ const Project = (props: any) => {
     </Box>
   );
 };
-export const ProjectContainer = (props: shiftProps) => {
+export const ProjectContainer = (props) => {
   const classes = useStyles();
   const { shift, projectTwo, projectThree } = props;
 

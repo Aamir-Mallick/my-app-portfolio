@@ -13,12 +13,7 @@ import { useStyles } from "./useStyles";
 import DoneAllIcon from "@material-ui/icons/DoneAll";
 import ArrowRightIcon from "@material-ui/icons/ArrowRight";
 
-type shiftProps = {
-  shift: boolean;
-  work: boolean;
-};
-
-export const SkillContainer = (props: shiftProps) => {
+export const SkillContainer = (props) => {
   const classes = useStyles();
   const { shift, work } = props;
 
