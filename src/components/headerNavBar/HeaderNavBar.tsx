@@ -60,9 +60,11 @@ export const HeaderNavBar = () => {
           </Typography>
         </Box>
         <Box className={classes.NavMainContainerBox}>
-          <Button variant="outlined" color="secondary">
-            Resume
-          </Button>
+          <a href="https://drive.google.com/file/d/1iGU9WTu3ce1d5850EHBv2E1s1TddhumU/view">
+            <Button variant="outlined" color="secondary">
+              Resume
+            </Button>
+          </a>
         </Box>
       </>
     );
