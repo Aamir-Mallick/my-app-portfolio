@@ -61,12 +61,12 @@ export const Contact = (props) => {
         </Box>
         <Box className={classes.linkContainerMobile}>
           <Box className={classes.iconeHeightMobile}>
-            <Link>
+            <Link href="https://github.com/Aamir-Mallick">
               <GitHubIcon style={{ color: "#ccd6f6", cursor: "pointer" }} />
             </Link>
           </Box>
           <Box className={classes.iconeHeightMobile}>
-            <Link>
+            <Link href="https://www.linkedin.com/in/aamir-mallick-b4b41a187/">
               <LinkedInIcon style={{ color: "#ccd6f6", cursor: "pointer" }} />
             </Link>
           </Box>
