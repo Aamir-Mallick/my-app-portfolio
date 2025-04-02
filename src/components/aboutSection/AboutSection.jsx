@@ -96,19 +96,74 @@ export const AboutSection = (props) => {
                   fontSize: "1.5rem",
                 }}
               >
-                Hello there! I'm Aamir Mallick, a passionate and results-driven
-                freelance web developer with a knack for crafting dynamic and
-                visually appealing websites. With a keen eye for detail and a
-                commitment to excellence, I specialize in creating customized,
-                responsive, and user-friendly web solutions tailored to meet the
-                unique needs of my clients
+                Hello there! I'm Aamir Mallick, As a seasoned Frontend Developer
+                with over 4 years of experience at Deloitte, I have honed my
+                skills in creating dynamic, user-friendly web applications that
+                meet the highest standards of performance and usability. My role
+                at Deloitte has allowed me to work on a variety of projects,
+                collaborating with cross-functional teams to deliver innovative
+                solutions for clients across different industries
               </motion.div>
-              {/* <motion.div
+              <motion.div
+                initial={{ y: -300, opacity: 0 }}
+                animate={{ y: shift ? 0 : -300, opacity: shift ? 1 : 0 }}
+                transition={{ delay: 0, duration: 1 }}
+                style={{
+                  width: "auto",
+                  margin: "1rem auto",
+                  fontSize: "1.5rem",
+                }}
+              >
+                <div class="responsibilities">
+                  <h2>Key Responsibilities</h2>
+                  <ul>
+                    <li>
+                      <strong>Web Development:</strong> Developed and maintained
+                      responsive web applications using HTML, CSS, JavaScript,
+                      and modern frameworks such as React.js and Angular.
+                    </li>
+                    <li>
+                      <strong>UI/UX Design:</strong> Worked closely with UI/UX
+                      designers to implement intuitive and visually appealing
+                      user interfaces, ensuring a seamless user experience.
+                    </li>
+                    <li>
+                      <strong>Performance Optimization:</strong> Conducted
+                      performance optimization techniques to enhance the speed
+                      and efficiency of web applications, including code
+                      splitting, lazy loading, and minimizing HTTP requests.
+                    </li>
+                    <li>
+                      <strong>Cross-Browser Compatibility:</strong> Ensured web
+                      applications are compatible across various browsers and
+                      devices, performing thorough testing and debugging.
+                    </li>
+                    <li>
+                      <strong>Version Control:</strong> Utilized Git for version
+                      control, managing code repositories, and collaborating
+                      with team members on code reviews and merges.
+                    </li>
+                    <li>
+                      <strong>Agile Methodologies:</strong> Participated in
+                      Agile development processes, including sprint planning,
+                      daily stand-ups, and retrospectives, to ensure timely
+                      delivery of high-quality software.
+                    </li>
+                    <li>
+                      <strong>Client Interaction:</strong> Engaged with clients
+                      to gather requirements, provide technical expertise, and
+                      deliver tailored solutions that align with their business
+                      objectives.
+                    </li>
+                  </ul>
+                </div>
+              </motion.div>
+              <motion.div
                 initial={{ y: 300, opacity: 0 }}
                 animate={{ y: shift ? 0 : 300, opacity: shift ? 1 : 0 }}
                 transition={{ delay: 0, duration: 1 }}
                 style={{
-                  width: "400px",
+                  width: "360px",
                   height: "200px",
                   margin: "1rem auto",
                   border: "3px solid #64ffda",
@@ -117,7 +172,7 @@ export const AboutSection = (props) => {
                 }}
               >
                 <Box className={classes.imageContainer}></Box>
-              </motion.div> */}
+              </motion.div>
             </Box>
           </motion.div>
         </Container>

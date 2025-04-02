@@ -70,12 +70,12 @@ export const Contact = (props) => {
               <LinkedInIcon style={{ color: "#ccd6f6", cursor: "pointer" }} />
             </Link>
           </Box>
-          <Box className={classes.iconeHeightMobile}>
+          {/* <Box className={classes.iconeHeightMobile}>
             <TwitterIcon style={{ color: "#ccd6f6", cursor: "pointer" }} />
           </Box>
           <Box className={classes.iconeHeightMobile}>
             <InstagramIcon style={{ color: "#ccd6f6", cursor: "pointer" }} />
-          </Box>
+          </Box> */}
         </Box>
         <Box className={classes.emailContainerMobile}>
           <Typography style={{ fontSize: "20px" }} variant="body2">

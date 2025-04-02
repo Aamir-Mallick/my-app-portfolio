@@ -12,7 +12,7 @@ export const useStyles = makeStyles((theme) => ({
   skillCardMainContainer: {
     marginTop: "20px",
     display: "flex",
-    justifyContent: "space-around",
+    justifyContent: "center",
     // flexWrap: "wrap",
     color: "#8892b0",
     // // height: "600px",

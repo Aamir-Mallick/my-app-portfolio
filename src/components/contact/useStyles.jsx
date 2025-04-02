@@ -13,7 +13,7 @@ export const useStyles = makeStyles((theme) => ({
       margin: "1rem auto",
       marginTop: "2rem",
       display: "flex",
-      justifyContent: "space-between",
+      justifyContent: "space-evenly",
     },
   },
   emailContainerMobile: {

@@ -173,11 +173,13 @@ export const HeaderNavBar = () => {
             <ListItemText
               className={classes.dropDownNavAnimationButton}
               primary={
-                <Typography align="center">
-                  <Button variant="outlined" color="secondary">
-                    Resume
-                  </Button>
-                </Typography>
+                <a href="https://drive.google.com/file/d/1iGU9WTu3ce1d5850EHBv2E1s1TddhumU/view">
+                  <Typography align="center">
+                    <Button variant="outlined" color="secondary">
+                      Resume
+                    </Button>
+                  </Typography>
+                </a>
               }
             />
           </ListItem>
