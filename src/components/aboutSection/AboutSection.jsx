@@ -1,182 +1,109 @@
-import React from "react";
-import {
-  Box,
-  Typography,
-  IconButton,
-  Button,
-  Container,
-} from "@material-ui/core";
-import { useStyles } from "./useStyles";
+"use client";
+
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { FiArrowUpRight, FiMail } from "react-icons/fi";
 
-export const AboutSection = (props) => {
-  const classes = useStyles();
-  const { shift } = props;
-  // console.log("ahha", shift);
+const highlightWords = ["Design Systems", "DesignOps", "Performance"];
+
+export const AboutSection = () => {
   return (
-    <motion.div
-      initial={{ y: -300, opacity: 0 }}
-      animate={{ y: 0, opacity: 1 }}
-      transition={{ delay: 0.3, duration: 2 }}
+    <section
+      id="about"
+      className="relative isolate overflow-hidden pt-40 pb-28 sm:pb-36"
     >
-      <Box id="about" className={classes.aboutMainContainer}>
-        <Container maxWidth="md" className={classes.textContainer}>
-          <Typography
-            style={{ color: "#ccd6f6", fontWeight: 900, fontFamily: "Calibre" }}
-            variant="h2"
-          >
-            I am web Developer
-          </Typography>
+      <div className="pointer-events-none absolute inset-0 -z-10 bg-grid-radial opacity-70" />
+      <div className="pointer-events-none absolute inset-x-0 -top-32 -z-10 h-96 bg-gradient-to-b from-accent/10 to-transparent blur-3xl" />
+      <div className="mx-auto flex max-w-6xl flex-col gap-14 px-6 text-left lg:flex-row lg:items-center lg:gap-24 lg:px-10">
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.6 }}
+          transition={{ duration: 0.6 }}
+          className="max-w-2xl space-y-8"
+        >
+          <span className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-slate-900/60 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-accent">
+            Frontend Engineer
+          </span>
 
-          <Typography
-            style={{
-              color: "#8892b0",
-              fontWeight: 900,
-              fontFamily: "Calibre",
-              marginTop: "1rem",
-            }}
-            variant="h2"
-          >
-            I build things for the web.
-          </Typography>
-          <Typography
-            style={{
-              color: "#8892b0",
-              marginTop: "1rem",
-              maxWidth: "500px",
-              fontWeight: 600,
-              fontSize: "1.5rem",
-            }}
-            variant="body2"
-          >
-            I'm a software engineer specializing in building (and occasionally
-            designing) exceptional digital experiences. Currently, I'm focused
-            on building accessible, human-centered products.
-          </Typography>
-          <Box style={{ marginTop: "2rem" }}>
-            <Button
+          <h1 className="text-4xl font-semibold leading-tight text-slate-50 sm:text-5xl lg:text-6xl">
+            Crafting resilient, human-centered web experiences for modern brands.
+          </h1>
+
+          <p className="text-lg leading-relaxed text-slate-300/90 lg:text-xl">
+            I'm Aamir Mallick, a senior front-end developer focused on design systems,
+            accessible interfaces, and meaningful animation. I partner with product
+            teams to turn complex ideas into intuitive journeys across the web.
+          </p>
+
+          <div className="flex flex-wrap gap-3">
+            {highlightWords.map((word) => (
+              <span
+                key={word}
+                className="rounded-full border border-slate-700/80 bg-slate-900/40 px-4 py-2 text-sm font-medium text-slate-300"
+              >
+                {word}
+              </span>
+            ))}
+          </div>
+
+          <div className="flex flex-col items-start gap-4 sm:flex-row">
+            <a
               href="https://mail.google.com/mail/u/0/?tab=km#inbox/FMfcgzGljlqmgZZflcqLWvKKjZCKkvSK?compose=GTvVlcSBmmDLtkjmpPnTcwZxvDZHcLvFnWKfKXHpNDFjHVLGcBXMbBsPCvbVSrNHvVTrkZpLbbWpq"
-              size="large"
-              variant="outlined"
-              color="secondary"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-night transition hover:bg-accent-soft"
             >
-              Get In Touch
-            </Button>
-          </Box>
-        </Container>
-        <Container maxWidth="md">
-          <motion.div>
-            <motion.div
-              initial={{ x: -300, opacity: 0 }}
-              animate={{ x: shift ? 0 : -300, opacity: shift ? 1 : 0 }}
-              transition={{ delay: 0, duration: 1 }}
-              style={{ display: "flex", alignItems: "center" }}
+              <FiMail />
+              Start a conversation
+            </a>
+            <Link
+              href="#projects"
+              className="inline-flex items-center gap-2 rounded-full border border-slate-700 px-6 py-3 text-sm font-semibold text-slate-200 transition hover:border-accent hover:text-accent"
             >
-              <Typography variant="h4" color="secondary">
-                About Me
-              </Typography>
-              <Box
-                className={classes.aboutDash}
-                style={{
-                  width: "250px",
-                  marginLeft: "15px",
-                  backgroundColor: "red",
-                  border: "1px solid #68686a",
-                }}
-              ></Box>
-            </motion.div>
-            <Box style={{ color: "#8892b0" }}>
-              <motion.div
-                initial={{ y: -300, opacity: 0 }}
-                animate={{ y: shift ? 0 : -300, opacity: shift ? 1 : 0 }}
-                transition={{ delay: 0, duration: 1 }}
-                style={{
-                  width: "auto",
-                  margin: "1rem auto",
-                  fontSize: "1.5rem",
-                }}
-              >
-                Hello there! I'm Aamir Mallick, As a seasoned Frontend Developer
-                with over 4 years of experience at Deloitte, I have honed my
-                skills in creating dynamic, user-friendly web applications that
-                meet the highest standards of performance and usability. My role
-                at Deloitte has allowed me to work on a variety of projects,
-                collaborating with cross-functional teams to deliver innovative
-                solutions for clients across different industries
-              </motion.div>
-              <motion.div
-                initial={{ y: -300, opacity: 0 }}
-                animate={{ y: shift ? 0 : -300, opacity: shift ? 1 : 0 }}
-                transition={{ delay: 0, duration: 1 }}
-                style={{
-                  width: "auto",
-                  margin: "1rem auto",
-                  fontSize: "1.5rem",
-                }}
-              >
-                <div class="responsibilities">
-                  <h2>Key Responsibilities</h2>
-                  <ul>
-                    <li>
-                      <strong>Web Development:</strong> Developed and maintained
-                      responsive web applications using HTML, CSS, JavaScript,
-                      and modern frameworks such as React.js and Angular.
-                    </li>
-                    <li>
-                      <strong>UI/UX Design:</strong> Worked closely with UI/UX
-                      designers to implement intuitive and visually appealing
-                      user interfaces, ensuring a seamless user experience.
-                    </li>
-                    <li>
-                      <strong>Performance Optimization:</strong> Conducted
-                      performance optimization techniques to enhance the speed
-                      and efficiency of web applications, including code
-                      splitting, lazy loading, and minimizing HTTP requests.
-                    </li>
-                    <li>
-                      <strong>Cross-Browser Compatibility:</strong> Ensured web
-                      applications are compatible across various browsers and
-                      devices, performing thorough testing and debugging.
-                    </li>
-                    <li>
-                      <strong>Version Control:</strong> Utilized Git for version
-                      control, managing code repositories, and collaborating
-                      with team members on code reviews and merges.
-                    </li>
-                    <li>
-                      <strong>Agile Methodologies:</strong> Participated in
-                      Agile development processes, including sprint planning,
-                      daily stand-ups, and retrospectives, to ensure timely
-                      delivery of high-quality software.
-                    </li>
-                    <li>
-                      <strong>Client Interaction:</strong> Engaged with clients
-                      to gather requirements, provide technical expertise, and
-                      deliver tailored solutions that align with their business
-                      objectives.
-                    </li>
-                  </ul>
-                </div>
-              </motion.div>
-              <motion.div
-                initial={{ y: 300, opacity: 0 }}
-                animate={{ y: shift ? 0 : 300, opacity: shift ? 1 : 0 }}
-                transition={{ delay: 0, duration: 1 }}
-                style={{
-                  width: "360px",
-                  height: "200px",
-                  margin: "1rem auto",
-                  border: "3px solid #64ffda",
-                  borderRadius: "5px",
-                  position: "relative",
-                }}
-              >
-                <Box className={classes.imageContainer}></Box>
-              </motion.div>
-            </Box>
-          </motion.div>
-        </Container>
-      </Box>
-    </motion.div>
+              View recent work
+              <FiArrowUpRight />
+            </Link>
+          </div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.92 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6 }}
+          className="relative mx-auto flex w-full max-w-sm flex-col gap-6 rounded-3xl border border-slate-800/80 bg-slate-950/70 p-8 shadow-glow sm:max-w-md"
+        >
+          <div className="absolute -inset-px rounded-3xl border border-white/10" />
+          <div className="relative">
+            <p className="text-sm font-semibold text-accent">Currently @ Deloitte</p>
+            <p className="mt-2 text-3xl font-semibold text-white">4+ Years</p>
+            <p className="text-sm text-slate-400">Design-led engineering & delivery</p>
+          </div>
+
+          <div className="relative space-y-4 text-sm text-slate-300">
+            <p>
+              Translating ambitious concepts into performant interfaces for finance,
+              education, and SaaS platforms. Collaborative partner across design,
+              product, and engineering.
+            </p>
+            <ul className="space-y-2 text-slate-400">
+              <li className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                Design systems, accessibility, and micro-interactions
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                Accelerating delivery with Next.js and modern tooling
+              </li>
+              <li className="flex items-center gap-2">
+                <span className="h-1.5 w-1.5 rounded-full bg-accent" />
+                Mentoring teams in scalable front-end architecture
+              </li>
+            </ul>
+          </div>
+        </motion.div>
+      </div>
+    </section>
   );
 };
