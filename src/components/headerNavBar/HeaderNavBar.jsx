@@ -1,208 +1,122 @@
-import React, { useState } from "react";
-import { Box, AppBar, Toolbar, Typography, Button } from "@material-ui/core";
-import { useStyles } from "./useStyles";
-import DehazeIcon from "@material-ui/icons/Dehaze";
-import CloseIcon from "@material-ui/icons/Close";
-import {
-  List,
-  ListItem,
-  ListItemText,
-  IconButton,
-  Divider,
-  Link,
-} from "@material-ui/core";
-// import styles from "./container.module.css";
+ "use client";
+
+import { useEffect, useState } from "react";
+import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
+import { FiMenu, FiX } from "react-icons/fi";
+
+const navigationLinks = [
+  { href: "#about", label: "About" },
+  { href: "#skills", label: "Skills" },
+  { href: "#projects", label: "Projects" },
+  { href: "#contact", label: "Contact" },
+];
 
 export const HeaderNavBar = () => {
-  const classes = useStyles();
-  const [showDropDown, setShowDropDown] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const DropDown = () => {
-    setShowDropDown(!showDropDown);
-  };
+  useEffect(() => {
+    const onScroll = () => {
+      setIsScrolled(window.scrollY > 16);
+    };
 
-  const tabletAndDesktopViewNavbar = () => {
-    return (
-      <>
-        <Box className={classes.NavMainContainer}>
-          <Typography
-            variant="h4"
-            color="secondary"
-            align="center"
-            style={{
-              fontWeight: 900,
-              letterSpacing: "2px",
-            }}
-          >
-            Aamir Mallick
-          </Typography>
-        </Box>
-        <Box className={classes.headerNavigationContainer}>
-          <Typography variant="body2">
-            <Link href="#about" className={classes.navLinkText}>
-              About
-            </Link>
-          </Typography>
-          <Typography variant="body2">
-            <Link href="#skill" className={classes.navLinkText}>
-              Skill
-            </Link>
-          </Typography>
-          <Typography variant="body2">
-            <Link href="#project" className={classes.navLinkText}>
-              Projects
-            </Link>
-          </Typography>
-          <Typography variant="body2">
-            <Link href="#contact" className={classes.navLinkText}>
-              Contact
-            </Link>
-          </Typography>
-        </Box>
-        <Box className={classes.NavMainContainerBox}>
-          <a href="https://drive.google.com/file/d/1iGU9WTu3ce1d5850EHBv2E1s1TddhumU/view">
-            <Button variant="outlined" color="secondary">
-              Resume
-            </Button>
-          </a>
-        </Box>
-      </>
-    );
-  };
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-  const mobileViewNavbar = () => {
-    return (
-      <>
-        <Box className={classes.headingContainer}>
-          <Typography color="secondary" variant="h5">
-            Aamir Mallick
-          </Typography>
-        </Box>
-        <Box className={classes.navIcons}>
-          {!showDropDown ? (
-            <IconButton>
-              <DehazeIcon style={{ color: "#ffffff" }} onClick={DropDown} />
-            </IconButton>
-          ) : (
-            <IconButton>
-              <CloseIcon style={{ color: "#ffffff" }} onClick={DropDown} />
-            </IconButton>
-          )}
-        </Box>
-      </>
-    );
-  };
+  useEffect(() => {
+    if (!isOpen) {
+      document.body.style.removeProperty("overflow");
+      return;
+    }
+    document.body.style.setProperty("overflow", "hidden");
+    return () => document.body.style.removeProperty("overflow");
+  }, [isOpen]);
 
-  const navLinkDropDown = () => {
-    return (
-      <Box className={`${classes.dropDownNav} ${classes.dropDownNavAnimation}`}>
-        <List component="nav" aria-label="main mailbox folders">
-          <ListItem button>
-            <ListItemText
-              className={classes.dropDownNavAnimationButton}
-              primary={
-                <Typography align="center" variant="body2">
-                  <Link
-                    className={classes.navLinkText}
-                    href="#about"
-                    onClick={() => {
-                      setShowDropDown(false);
-                    }}
-                  >
-                    About
-                  </Link>
-                </Typography>
-              }
-            />
-          </ListItem>
-          <ListItem button>
-            <ListItemText
-              className={classes.dropDownNavAnimationButton}
-              primary={
-                <Typography align="center" variant="body2">
-                  <Link
-                    className={classes.navLinkText}
-                    href="#skill"
-                    onClick={() => {
-                      setShowDropDown(false);
-                    }}
-                  >
-                    Skill
-                  </Link>
-                </Typography>
-              }
-            />
-          </ListItem>
-          <ListItem button>
-            <ListItemText
-              className={classes.dropDownNavAnimationButton}
-              primary={
-                <Typography align="center" variant="body2">
-                  <Link
-                    className={classes.navLinkText}
-                    href="#project"
-                    onClick={() => {
-                      setShowDropDown(false);
-                    }}
-                  >
-                    Project
-                  </Link>
-                </Typography>
-              }
-            />
-          </ListItem>
-          <ListItem button>
-            <ListItemText
-              className={classes.dropDownNavAnimationButton}
-              primary={
-                <Typography align="center" variant="body2">
-                  <Link
-                    className={classes.navLinkText}
-                    href="#contact"
-                    onClick={() => {
-                      setShowDropDown(false);
-                    }}
-                  >
-                    Contact
-                  </Link>
-                </Typography>
-              }
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemText
-              className={classes.dropDownNavAnimationButton}
-              primary={
-                <a href="https://drive.google.com/file/d/1iGU9WTu3ce1d5850EHBv2E1s1TddhumU/view">
-                  <Typography align="center">
-                    <Button variant="outlined" color="secondary">
-                      Resume
-                    </Button>
-                  </Typography>
-                </a>
-              }
-            />
-          </ListItem>
-        </List>
-      </Box>
-    );
-  };
+  const closeMenu = () => setIsOpen(false);
 
   return (
-    <>
-      <Box
-        style={{ border: "1px solid green" }}
-        className={`${showDropDown ? classes.main : ""}`}
-      >
-        <AppBar>
-          <Toolbar className={`${classes.toolbarContainer}`}>
-            {tabletAndDesktopViewNavbar()}
-            {mobileViewNavbar()}
-          </Toolbar>
-          {showDropDown ? <Divider /> : null}
-          {showDropDown ? navLinkDropDown() : null}
-        </AppBar>
-      </Box>
-    </>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-night/85 backdrop-blur-md shadow-lg shadow-cyan-500/10 border-b border-slate-800/60"
+          : "bg-transparent"
+      }`}
+    >
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5 lg:px-10">
+        <Link href="#top" className="text-lg font-semibold tracking-tight">
+          <span className="text-accent">Aamir</span>{" "}
+          <span className="text-slate-200">Mallick</span>
+        </Link>
+
+        <nav className="hidden items-center gap-10 text-sm font-medium text-slate-300 md:flex">
+          {navigationLinks.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="relative transition before:absolute before:-bottom-2 before:left-0 before:h-0.5 before:w-0 before:bg-accent before:transition-all before:duration-300 hover:text-white hover:before:w-full"
+            >
+              {item.label}
+            </Link>
+          ))}
+          <a
+            href="https://drive.google.com/file/d/1iGU9WTu3ce1d5850EHBv2E1s1TddhumU/view"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full border border-accent px-5 py-2 text-sm font-semibold text-accent transition hover:bg-accent hover:text-night"
+          >
+            View Résumé
+          </a>
+        </nav>
+
+        <button
+          type="button"
+          aria-label="Toggle navigation menu"
+          className="md:hidden rounded-full border border-slate-700/80 p-2 text-slate-200 transition hover:border-accent hover:text-accent"
+          onClick={() => setIsOpen((prev) => !prev)}
+        >
+          {isOpen ? <FiX size={22} /> : <FiMenu size={22} />}
+        </button>
+      </div>
+
+      <AnimatePresence>
+        {isOpen && (
+          <motion.nav
+            initial={{ opacity: 0, y: -24 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -18 }}
+            transition={{ duration: 0.25 }}
+            className="border-t border-slate-800/70 bg-night/95 px-6 pb-6 pt-4 shadow-xl shadow-cyan-900/40 md:hidden"
+          >
+            <ul className="space-y-4">
+              {navigationLinks.map((item) => (
+                <li key={item.href}>
+                  <Link
+                    href={item.href}
+                    onClick={closeMenu}
+                    className="block rounded-lg border border-transparent px-4 py-3 text-base font-medium text-slate-300 transition hover:border-accent/40 hover:bg-slate-900/60 hover:text-white"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+              <li>
+                <a
+                  className="block rounded-lg border border-accent px-4 py-3 text-center text-base font-semibold text-accent transition hover:bg-accent hover:text-night"
+                  href="https://drive.google.com/file/d/1iGU9WTu3ce1d5850EHBv2E1s1TddhumU/view"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={closeMenu}
+                >
+                  View Résumé
+                </a>
+              </li>
+            </ul>
+          </motion.nav>
+        )}
+      </AnimatePresence>
+    </header>
   );
 };
